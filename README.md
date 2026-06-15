@@ -1,10 +1,10 @@
-# Radical Codes
+# Ryan Gonyon / radical.codes
 
-Public site for [radical.codes](https://radical.codes), the buyer-facing proof surface for Ryan Gonyon / Radical Codes.
+Public site for [radical.codes](https://radical.codes), the buyer-facing proof surface for Ryan Gonyon.
 
 ## What This Site Is
 
-Radical Codes focuses on making fragile software dependable:
+I use radical.codes to show proof of the work I do around fragile software:
 
 - app rescue and production hardening
 - AI-built MVP stabilization
@@ -13,7 +13,7 @@ Radical Codes focuses on making fragile software dependable:
 - API, data, and deployment repair
 - proof-first prototypes that become production systems
 
-The page is intentionally small, static, and easy to deploy. It is meant to be a credible profile and proposal link, not a bloated marketing site.
+The page is intentionally small, static, and easy to deploy. It is meant to be a credible personal profile and proposal link, not a bloated marketing site or a pretend agency.
 
 ## Current Proof Links
 
@@ -46,4 +46,3 @@ npm run build
 ```bash
 npx vercel deploy --prod
 ```
-
