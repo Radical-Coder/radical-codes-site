@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Radical Codes helps founders and operators make fragile, AI-built or legacy software dependable. Specialized in app rescue, production readiness, AI workflow automation, and internal tool dashboards by Ryan Gonyon."
+    />
+    <meta property="og:title" content="Radical Codes | Make Fragile Software Dependable" />
+    <meta
+      property="og:description"
+      content="App rescue, production readiness, AI workflow automation, and proof-first internal tools by Ryan Gonyon."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://radical.codes" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#000000" />
+    <title>Radical Codes | Make Fragile Software Dependable</title>
+    
+    <!-- Google Fonts: Outfit (headings), Inter (body), JetBrains Mono (code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        color-scheme: light;
+        
+        --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        --font-display: 'Outfit', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        --font-mono: 'JetBrains Mono', monospace;
+        
+        --ink: #000000;
+        --ink-muted: #1f2937; /* High contrast dark grey */
+        --ink-light: #4b5563; /* Medium grey for labels */
+        --border: #000000;
+        
+        /* Operational Accents */
+        --emerald: #059669; /* Emerald Green */
+        --emerald-dot: #10b981; /* Live status green */
+        --emerald-bg: #ecfdf5; /* Emerald wash for badges */
+        --blue: #0052ff; /* Electric Blue for links/CTAs */
+        --blue-hover: #003db3;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        color: var(--ink);
+        background-color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+
+      /* Flat Sticky Header */
+      .site-header {
+        border-bottom: 2px solid var(--border);
+        position: sticky;
+        top: 0;
+        background: #ffffff;
+        z-index: 100;
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand-wordmark {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: var(--ink);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .brand-cursor {
+        color: var(--emerald);
+        font-weight: 800;
+        margin-left: 2px;
+        animation: blink 1s step-end infinite;
+      }
+
+      @keyframes blink {
+        from, to { color: transparent }
+        50% { color: var(--emerald) }
+      }
+
+      .site-nav {
+        display: flex;
+        gap: 24px;
+      }
+
+      .nav-link {
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--ink);
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--blue);
+      }
+
+      .btn {
+        font-family: var(--font-display);
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 4px;
+        transition: background-color 0.15s ease, transform 0.1s ease;
+        cursor: pointer;
+        border: 2px solid var(--border);
+      }
+
+      .btn:active {
+        transform: scale(0.98);
+      }
+
+      .btn-blue {
+        background: var(--blue);
+        color: #ffffff;
+        border-color: var(--blue);
+      }
+
+      .btn-blue:hover {
+        background: var(--blue-hover);
+        border-color: var(--blue-hover);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--border);
+      }
+
+      .btn-outline:hover {
+        background: #f9fafb;
+      }
+
+      .btn-sm {
+        padding: 6px 14px;
+        font-size: 13px;
+      }
+
+      .btn-lg {
+        padding: 12px 24px;
+        font-size: 15px;
+      }
+
+      /* Sections & Grid Layouts */
+      .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 24px;
+      }
+
+      .hero-section {
+        padding-top: 72px;
+        padding-bottom: 56px;
+      }
+
+      /* Hero Grid */
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(34px, 4.5vw, 56px);
+        line-height: 1.05;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+
+      .hero-title-accent {
+        color: var(--emerald);
+      }
+
+      .hero-lede {
+        font-size: clamp(15px, 1.8vw, 17px);
+        line-height: 1.55;
+        color: var(--ink-muted);
+        margin-bottom: 32px;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .hero-signal-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0 0 32px;
+      }
+
+      .hero-signal {
+        border-left: 2px solid var(--border);
+        padding-left: 12px;
+      }
+
+      .hero-signal strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 14px;
+        line-height: 1.2;
+        color: var(--ink);
+        margin-bottom: 4px;
+      }
+
+      .hero-signal span {
+        display: block;
+        font-size: 12px;
+        line-height: 1.35;
+        color: var(--ink-light);
+      }
+
+      /* Reliability Console (Engineering Dossier Visual) */
+      .console {
+        font-family: var(--font-mono);
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        background: #ffffff;
+        color: var(--ink);
+        overflow: hidden;
+      }
+
+      .console-header {
+        background: var(--ink);
+        color: #ffffff;
+        padding: 8px 12px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .console-status-indicator {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .console-dot {
+        width: 6px;
+        height: 6px;
+        background-color: var(--emerald-dot);
+        border-radius: 50%;
+        animation: pulse-status 2s infinite;
+      }
+
+      @keyframes pulse-status {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.3); opacity: 0.5; }
+      }
+
+      .console-section {
+        border-bottom: 1px solid var(--border);
+        padding: 12px;
+      }
+
+      .console-section:last-child {
+        border-bottom: none;
+      }
+
+      .console-label {
+        font-size: 9px;
+        font-weight: 700;
+        color: var(--ink-light);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 6px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .console-text {
+        font-size: 11px;
+        line-height: 1.45;
+        white-space: pre-wrap;
+      }
+
+      /* Code Diff Component */
+      .code-diff {
+        font-size: 11px;
+        line-height: 1.4;
+      }
+
+      .diff-row {
+        display: flex;
+        padding: 1px 0;
+      }
+
+      .diff-sign {
+        width: 14px;
+        flex-shrink: 0;
+        font-weight: 700;
+        user-select: none;
+      }
+
+      .diff-del {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+
+      .diff-add {
+        background: #d1fae5;
+        color: #047857;
+      }
+
+      /* Checklist */
+      .audit-checklist {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .audit-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+      }
+
+      .audit-check {
+        color: var(--emerald);
+        font-weight: 700;
+      }
+
+      /* Console Links */
+      .console-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .console-link {
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 11px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .console-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Section Headers */
+      .section-header {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 16px;
+        margin-bottom: 32px;
+      }
+
+      .section-eyebrow {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--emerald);
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 3.5vw, 36px);
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+
+      /* Proof Ledger Table */
+      .ledger-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+      .ledger-table th {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 2px solid var(--border);
+        padding: 12px 8px;
+        color: var(--ink-light);
+      }
+
+      .ledger-table tr {
+        border-bottom: 1px solid var(--border);
+        transition: background-color 0.1s ease;
+      }
+
+      .ledger-table tbody tr:hover {
+        background-color: #fafafa;
+      }
+
+      .ledger-table td {
+        padding: 24px 8px;
+        vertical-align: top;
+        font-size: 14.5px;
+        line-height: 1.5;
+        color: var(--ink);
+      }
+
+      .ledger-project-name {
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--ink);
+      }
+
+      .ledger-project {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .project-mark {
+        width: 36px;
+        height: 36px;
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        background: var(--ink);
+        color: var(--emerald-dot);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 36px;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .ledger-project-by {
+        display: block;
+        font-size: 11px;
+        color: var(--ink-light);
+        margin-top: 2px;
+      }
+
+      .ledger-risk-desc {
+        color: var(--ink-muted);
+      }
+
+      .ledger-outcome-desc {
+        color: var(--ink-muted);
+      }
+
+      .ledger-link {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .ledger-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Method & Protocol Section */
+      .protocol-list {
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid var(--border);
+      }
+
+      .protocol-item {
+        display: grid;
+        grid-template-columns: 220px 1fr 240px;
+        gap: 32px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .protocol-meta {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .protocol-num {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--emerald);
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .protocol-title {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--ink);
+      }
+
+      .protocol-desc {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink-muted);
+      }
+
+      .protocol-deliverable {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        line-height: 1.5;
+        color: var(--ink);
+        border-left: 2px solid var(--emerald);
+        padding-left: 12px;
+      }
+
+      /* Standards Section */
+      .standards-list {
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid var(--border);
+      }
+
+      .standards-item {
+        display: grid;
+        grid-template-columns: 220px 1fr 100px;
+        gap: 32px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .standard-label {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--ink);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .standard-desc {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink-muted);
+      }
+
+      .standard-status {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--emerald);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-align: right;
+      }
+
+      /* About Section */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .about-body {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--ink-muted);
+      }
+
+      .about-body p {
+        margin-bottom: 20px;
+      }
+
+      .about-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      .about-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border: 2px solid var(--border);
+        padding: 24px;
+        border-radius: 4px;
+        background: #ffffff;
+      }
+
+      .about-panel-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--blue);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      /* Footer */
+      .site-footer {
+        border-top: 2px solid var(--border);
+        background: #ffffff;
+        padding: 60px 24px;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .footer-left {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-brand {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--ink);
+        letter-spacing: 0.05em;
+      }
+
+      .footer-tagline {
+        font-size: 14px;
+        color: var(--ink-light);
+      }
+
+      .footer-right {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .footer-contact-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--emerald);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .footer-email {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--blue);
+        text-decoration: none;
+      }
+
+      .footer-email:hover {
+        text-decoration: underline;
+      }
+
+      .footer-copyright {
+        font-size: 11px;
+        color: var(--ink-light);
+        margin-top: 8px;
+      }
+
+      /* Responsive Layout Rules */
+      @media (max-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-container {
+          padding: 60px 16px;
+        }
+
+        .hero-section {
+          padding-top: 54px;
+          padding-bottom: 34px;
+        }
+        
+        .site-nav {
+          display: none;
+        }
+        
+        .nav-link {
+          font-size: 12px;
+        }
+        
+        .header-container {
+          padding: 12px 16px;
+        }
+
+        .header-cta {
+          display: block;
+        }
+
+        .header-cta .btn {
+          padding: 6px 10px;
+          font-size: 12px;
+        }
+
+        .hero-signal-list {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          margin-bottom: 28px;
+        }
+
+        .hero-signal {
+          border-left-color: var(--emerald);
+        }
+
+        .hero-visual {
+          display: none;
+        }
+        
+        /* Table Stacked Layout (Mobile proof dossier ledger) */
+        .ledger-table, 
+        .ledger-table thead, 
+        .ledger-table tbody, 
+        .ledger-table th, 
+        .ledger-table td, 
+        .ledger-table tr {
+          display: block;
+          width: 100%;
+        }
+        
+        .ledger-table thead {
+          display: none;
+        }
+        
+        .ledger-table tr {
+          border-bottom: 2px solid var(--border);
+          padding: 20px 0;
+        }
+        
+        .ledger-table td {
+          padding: 8px 0;
+          border-bottom: none;
+        }
+        
+        .ledger-table td::before {
+          content: attr(data-label);
+          display: block;
+          font-family: var(--font-mono);
+          font-size: 9px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: var(--ink-light);
+          margin-bottom: 4px;
+        }
+
+        .ledger-project {
+          align-items: center;
+        }
+
+        .protocol-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 20px 0;
+        }
+
+        .protocol-deliverable {
+          margin-top: 4px;
+        }
+
+        .standards-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 20px 0;
+        }
+
+        .standard-status {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .brand-wordmark {
+          font-size: 15px;
+        }
+
+        .header-container {
+          gap: 16px;
+        }
+
+        .hero-actions .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Flat Header with bottom rule -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="#" class="brand-wordmark" id="header-logo">
+          RADICAL CODES<span class="brand-cursor">_</span>
+        </a>
+        
+        <nav class="site-nav">
+          <a href="#work" class="nav-link" id="nav-link-work">Work</a>
+          <a href="#method" class="nav-link" id="nav-link-method">Method</a>
+          <a href="#standards" class="nav-link" id="nav-link-standards">Standards</a>
+          <a href="#contact" class="nav-link" id="nav-link-contact">Contact</a>
+        </nav>
+        
+        <div class="header-cta">
+          <a href="mailto:coderradical@gmail.com" class="btn btn-outline btn-sm" id="header-cta-button">
+            Start a Project
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="section-container hero-section" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1 class="hero-title" id="hero-title">Make fragile software dependable<span class="hero-title-accent">.</span></h1>
+            <p class="hero-lede">
+              Radical Codes helps founders and operators stabilize AI-built logic, recover legacy stacks, and ship custom operations boards that can survive real usage.
+            </p>
+
+            <div class="hero-signal-list" aria-label="Radical Codes operating signals">
+              <div class="hero-signal">
+                <strong>Engineer-owned</strong>
+                <span>Ryan writes the code. No account-manager fog.</span>
+              </div>
+              <div class="hero-signal">
+                <strong>Proof before polish</strong>
+                <span>Working surfaces before full-project commitment.</span>
+              </div>
+              <div class="hero-signal">
+                <strong>Built for operation</strong>
+                <span>Readable code, handoff docs, and telemetry.</span>
+              </div>
+            </div>
+            
+            <div class="hero-actions">
+              <a href="mailto:coderradical@gmail.com" class="btn btn-blue btn-lg" id="hero-cta-button-main">
+                Start a Project
+              </a>
+              <a href="#work" class="btn btn-outline btn-lg" id="hero-view-work-link">
+                View Work &darr;
+              </a>
+            </div>
+          </div>
+          
+          <!-- Reliability Console (Real Evidence Dashboard) -->
+          <div class="hero-visual">
+            <div class="console" aria-label="Operational Reliability Console">
+              <div class="console-header">
+                <span>RELIABILITY_CONSOLE // RC-PROD</span>
+                <div class="console-status-indicator">
+                  <span class="console-dot" aria-hidden="true"></span>
+                  <span>LIVE // SECURE</span>
+                </div>
+              </div>
+              
+              <!-- Deployment Trace -->
+              <div class="console-section">
+                <div class="console-label"><span>[01] Deployment Trace</span><span>SHA-256</span></div>
+                <div class="console-text">ID:        rc-deploy-prod-0x992
+REF:       main@sha256:d8a9f2bc7a9e0f31...
+ENV:       production-us-east-1
+STATUS:    12/12 validation checks passed
+VERIFY:    deployment hash matches source integrity</div>
+              </div>
+              
+              <!-- Audit Checklist -->
+              <div class="console-section">
+                <div class="console-label"><span>[02] Audit Checklist</span><span>Compliance</span></div>
+                <div class="audit-checklist">
+                  <div class="audit-item">
+                    <span class="audit-check">[✔]</span>
+                    <span>Memory leak vector resolved</span>
+                  </div>
+                  <div class="audit-item">
+                    <span class="audit-check">[✔]</span>
+                    <span>Race condition in order processing resolved</span>
+                  </div>
+                  <div class="audit-item">
+                    <span class="audit-check">[✔]</span>
+                    <span>Rate limit on LLM API client enforced</span>
+                  </div>
+                  <div class="audit-item">
+                    <span class="audit-check">[✔]</span>
+                    <span>Sentry telemetry initialized</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Code Diff -->
+              <div class="console-section">
+                <div class="console-label"><span>[03] Code Diff</span><span>route.ts</span></div>
+                <div class="code-diff">
+                  <div class="diff-row diff-del">
+                    <span class="diff-sign">-</span>
+                    <span>const data = await db.query(untrusted_payload);</span>
+                  </div>
+                  <div class="diff-row diff-add">
+                    <span class="diff-sign">+</span>
+                    <span>const { data, error } = await db.from('orders')</span>
+                  </div>
+                  <div class="diff-row diff-add">
+                    <span class="diff-sign">+</span>
+                    <span>  .select('*').eq('account_id', accountId);</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Incident Timeline -->
+              <div class="console-section">
+                <div class="console-label"><span>[04] Incident Timeline</span><span>Telemetry</span></div>
+                <div class="console-text">14:02:11 [WARN] Memory threshold warning (92%)
+14:02:12 [SYS]  Automated worker recycling triggered
+14:02:13 [OK]   Memory stabilized at 41% (0ms downtime)</div>
+              </div>
+              
+              <!-- Proof Links -->
+              <div class="console-section">
+                <div class="console-label"><span>[05] Proof Links</span><span>Verification</span></div>
+                <div class="console-links">
+                  <a href="https://ai-platform-catalog-intelligence-de.vercel.app" class="console-link" id="proof-board-catalog-link" target="_blank" rel="noopener">[LINK] Catalog Intelligence GPT-4o MVP &rarr;</a>
+                  <a href="https://www.automarkets.com.au/" class="console-link" id="proof-board-automarkets-link" target="_blank" rel="noopener">[LINK] AutoMarkets Live Marketplace &rarr;</a>
+                  <a href="https://mygradhub-mvp-demo.vercel.app" class="console-link" id="proof-board-mygradhub-link" target="_blank" rel="noopener">[LINK] MyGradHub MVP Demo &rarr;</a>
+                  <a href="https://mvp-launch-readiness-console.vercel.app" class="console-link" id="proof-board-readiness-link" target="_blank" rel="noopener">[LINK] MVP Launch Readiness Console &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proof Ledger (Case Studies Section) -->
+      <section id="work" class="section-container" aria-labelledby="ledger-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">PROOF LEDGER</span>
+          <h2 class="section-title" id="ledger-title">Real work. Real systems. Real impact.</h2>
+        </div>
+        
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th style="width: 25%">Project</th>
+              <th style="width: 35%">Risk Solved</th>
+              <th style="width: 25%">Outcome</th>
+              <th style="width: 15%">Proof</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1: Catalog Intelligence -->
+            <tr id="case-study-catalog-intelligence">
+              <td data-label="Project">
+                <div class="ledger-project">
+                  <span class="project-mark" aria-hidden="true">CI</span>
+                  <div>
+                    <span class="ledger-project-name">Catalog Intelligence MVP</span>
+                    <span class="ledger-project-by">GPT-4o catalog operations</span>
+                  </div>
+                </div>
+              </td>
+              <td data-label="Risk Solved" class="ledger-risk-desc">
+                Retail catalog data from APIs, affiliate feeds, and manual sources needed normalization, dedupe review, taxonomy mapping, and controlled AI usage.
+              </td>
+              <td data-label="Outcome" class="ledger-outcome-desc">
+                Live operator console with source-row staging, entity review, GPT-4o analysis, approval workflow, audit trail, export packet, and demo usage caps.
+              </td>
+              <td data-label="Proof">
+                <a href="https://ai-platform-catalog-intelligence-de.vercel.app" class="ledger-link" id="catalog-intelligence-case-study-link" target="_blank" rel="noopener">Live MVP &rarr;</a>
+              </td>
+            </tr>
+            <!-- Row 2: AutoMarkets -->
+            <tr id="case-study-automarkets">
+              <td data-label="Project">
+                <div class="ledger-project">
+                  <span class="project-mark" aria-hidden="true">AM</span>
+                  <div>
+                    <span class="ledger-project-name">AutoMarkets Live Marketplace</span>
+                    <span class="ledger-project-by">Production marketplace</span>
+                  </div>
+                </div>
+              </td>
+              <td data-label="Risk Solved" class="ledger-risk-desc">
+                Live marketplace drift across listings, market data, dealer ingestion, lead attribution, and admin review paths.
+              </td>
+              <td data-label="Outcome" class="ledger-outcome-desc">
+                Hardened production workflows for public listings, dealer/private visibility, tracking, SEO titles, and milestone review.
+              </td>
+              <td data-label="Proof">
+                <a href="https://www.automarkets.com.au/" class="ledger-link" id="automarkets-case-study-link" target="_blank" rel="noopener">Live Site &rarr;</a>
+              </td>
+            </tr>
+            <!-- Row 3: MyGradHub -->
+            <tr id="case-study-mygradhub">
+              <td data-label="Project">
+                <div class="ledger-project">
+                  <span class="project-mark" aria-hidden="true">GH</span>
+                  <div>
+                    <span class="ledger-project-name">MyGradHub MVP</span>
+                    <span class="ledger-project-by">Graduation marketplace</span>
+                  </div>
+                </div>
+              </td>
+              <td data-label="Risk Solved" class="ledger-risk-desc">
+                Ambiguous graduation-planning concept needed a concrete product shape for families, vendors, admin review, and handoff.
+              </td>
+              <td data-label="Outcome" class="ledger-outcome-desc">
+                Working MVP demo with social feed, vendor marketplace, role-aware navigation, and founder/admin surfaces.
+              </td>
+              <td data-label="Proof">
+                <a href="https://mygradhub-mvp-demo.vercel.app" class="ledger-link" id="mygradhub-case-study-link" target="_blank" rel="noopener">Original Demo &rarr;</a>
+              </td>
+            </tr>
+            <!-- Row 4: MVP Launch Readiness -->
+            <tr id="case-study-readiness">
+              <td data-label="Project">
+                <div class="ledger-project">
+                  <span class="project-mark" aria-hidden="true">LR</span>
+                  <div>
+                    <span class="ledger-project-name">MVP Launch Readiness Console</span>
+                    <span class="ledger-project-by">Launch hardening console</span>
+                  </div>
+                </div>
+              </td>
+              <td data-label="Risk Solved" class="ledger-risk-desc">
+                AI-built MVPs often look close to launch while hiding repo, auth, data, billing, and deployment risk.
+              </td>
+              <td data-label="Outcome" class="ledger-outcome-desc">
+                A focused triage console for intake, risk register, hardening priorities, evidence, and acceptance checks.
+              </td>
+              <td data-label="Proof">
+                <a href="https://mvp-launch-readiness-console.vercel.app" class="ledger-link" id="readiness-case-study-link" target="_blank" rel="noopener">Live Demo &rarr;</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Method & Protocol Section -->
+      <section id="method" class="section-container" aria-labelledby="method-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">METHOD & PROTOCOL</span>
+          <h2 class="section-title" id="method-title">Technical diagnostics to production handoff.</h2>
+        </div>
+        
+        <div class="protocol-list">
+          <div class="protocol-item">
+            <div class="protocol-meta">
+              <span class="protocol-num">01 / AUDIT & DIAGNOSE</span>
+              <h3 class="protocol-title">Root Cause Analysis</h3>
+            </div>
+            <div class="protocol-desc">
+              We review your existing codebase, API configurations, and deployment logs to identify memory leaks, race conditions, database index bottlenecks, or unhandled exceptions.
+            </div>
+            <div class="protocol-deliverable">Deliverable: fault map, scope brief, and success criteria.</div>
+          </div>
+          
+          <div class="protocol-item">
+            <div class="protocol-meta">
+              <span class="protocol-num">02 / PROTOTYPE</span>
+              <h3 class="protocol-title">Sandboxed Proofs</h3>
+            </div>
+            <div class="protocol-desc">
+              We build a live, working surface in an isolated sandbox environment to demonstrate how the resolved integration will function under simulated stress before writing final production changes.
+            </div>
+            <div class="protocol-deliverable">Deliverable: clickable proof, data model, and integration plan.</div>
+          </div>
+          
+          <div class="protocol-item">
+            <div class="protocol-meta">
+              <span class="protocol-num">03 / EXECUTE & HARDEN</span>
+              <h3 class="protocol-title">Logical Refactoring</h3>
+            </div>
+            <div class="protocol-desc">
+              We refactor critical integration layers, implement automated retry fallbacks, secure API keys and headers, enforce strict validation, and deploy via robust CI/CD environments.
+            </div>
+            <div class="protocol-deliverable">Deliverable: production PR, deployment recipe, and validation checks.</div>
+          </div>
+          
+          <div class="protocol-item">
+            <div class="protocol-meta">
+              <span class="protocol-num">04 / MONITOR & OPERATE</span>
+              <h3 class="protocol-title">Continuous Telemetry</h3>
+            </div>
+            <div class="protocol-desc">
+              We integrate real-time error tracking and telemetry, and construct a lightweight control dashboard so your operational team has absolute visibility 24/7.
+            </div>
+            <div class="protocol-deliverable">Deliverable: alerts, runbook, and operational dashboard.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Standards Section -->
+      <section id="standards" class="section-container" aria-labelledby="standards-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">STANDARDS</span>
+          <h2 class="section-title" id="standards-title">Operational rules we build by.</h2>
+        </div>
+        
+        <div class="standards-list">
+          <div class="standards-item">
+            <span class="standard-label">Fixed-Scope Agreements</span>
+            <div class="standard-desc">
+              We scope every project to a binary success criteria. No open-ended billing cycles, no surprise hourly creep. You pay for predefined operational results.
+            </div>
+            <span class="standard-status">Required</span>
+          </div>
+          
+          <div class="standards-item">
+            <span class="standard-label">Demos-First Commitment</span>
+            <div class="standard-desc">
+              You see and interact with a live, functional sandbox mockup demonstrating critical mechanics before you commit to signing a full project contract.
+            </div>
+            <span class="standard-status">Required</span>
+          </div>
+          
+          <div class="standards-item">
+            <span class="standard-label">Direct Engineering</span>
+            <div class="standard-desc">
+              Zero account managers, project coordinators, or sales buffers. You work directly with Ryan Gonyon—the engineer architecting and writing every line of code.
+            </div>
+            <span class="standard-status">Required</span>
+          </div>
+          
+          <div class="standards-item">
+            <span class="standard-label">Built for Handoff</span>
+            <div class="standard-desc">
+              Every deliverable is clean, self-documenting, covered by test suites, and packaged with clear deployment recipes so any engineer can operate it.
+            </div>
+            <span class="standard-status">Required</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section-container" aria-labelledby="about-title" style="border-top: 2px solid var(--border);">
+        <div class="about-grid">
+          <div>
+            <span class="section-eyebrow">OPERATOR</span>
+            <h2 class="section-title" id="about-title" style="margin-bottom: 24px;">Ryan Gonyon // Radical Codes</h2>
+            <div class="about-body">
+              <p>I help founders and operators make fragile, AI-generated or legacy software dependable. I build stable integration layers, custom control boards, and automated workflows that run continuously.</p>
+              <p>Radical Codes operates as a sharp, high-intensity technical studio. I don't build generic SaaS systems or bloated agency packages; I engineer robust operational tools that eliminate real business risk.</p>
+            </div>
+          </div>
+          <div class="about-cta">
+            <span class="about-panel-label">ENGAGEMENT</span>
+            <p style="font-size: 14px; line-height: 1.5; color: var(--ink-muted); margin-bottom: 12px;">Currently accepting select high-priority app rescue, dashboard, and AI automation projects.</p>
+            <a href="mailto:coderradical@gmail.com" class="btn btn-blue btn-lg" id="about-email-link" style="width: 100%;">
+              coderradical@gmail.com
+            </a>
+            <a href="https://github.com/Radical-Coder/radical-codes-site" class="btn btn-outline btn-lg" id="about-github-link" style="width: 100%; margin-top: 12px;" target="_blank" rel="noopener">
+              View Source on GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer with Contact ID -->
+    <footer class="site-footer" id="contact">
+      <div class="footer-container">
+        <div class="footer-left">
+          <span class="footer-brand">RADICAL CODES<span class="brand-cursor" aria-hidden="true">_</span></span>
+          <p class="footer-tagline">Making fragile software dependable.</p>
+        </div>
+        <div class="footer-right">
+          <span class="footer-contact-label">Get in touch</span>
+          <a href="mailto:coderradical@gmail.com" class="footer-email" id="footer-email-link">coderradical@gmail.com</a>
+          <a href="https://github.com/Radical-Coder/radical-codes-site" class="footer-email" id="footer-github-link" target="_blank" rel="noopener">github.com/Radical-Coder/radical-codes-site</a>
+          <span class="footer-copyright">&copy; 2026 Radical Codes. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

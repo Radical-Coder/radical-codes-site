@@ -1,0 +1,13 @@
+{
+  "name": "radical-codes-site",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --host 0.0.0.0"
+  },
+  "dependencies": {
+    "vite": "^7.2.6"
+  },
+  "devDependencies": {}
+}
