@@ -1,0 +1,9 @@
+{
+  "name": "radical.codes",
+  "short_name": "radical.codes",
+  "description": "Ryan Gonyon's public proof surface for app rescue, production readiness, workflow automation, and dependable software systems.",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#f8f8f4",
+  "theme_color": "#000000"
+}
