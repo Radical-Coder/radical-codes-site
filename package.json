@@ -2,9 +2,11 @@
   "name": "radical-codes-site",
   "private": true,
   "version": "0.1.0",
+  "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite --host 0.0.0.0"
+    "dev": "vite --host 0.0.0.0",
+    "test": "node --test tests/"
   },
   "dependencies": {
     "vite": "^7.2.6"
