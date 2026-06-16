@@ -510,6 +510,57 @@
         text-decoration: underline;
       }
 
+      /* Service Lanes */
+      .lane-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        border-top: 2px solid var(--border);
+        border-left: 2px solid var(--border);
+      }
+
+      .lane-card {
+        border-right: 2px solid var(--border);
+        border-bottom: 2px solid var(--border);
+        padding: 22px 18px;
+        min-height: 260px;
+      }
+
+      .lane-kicker {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--emerald);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .lane-title {
+        font-family: var(--font-display);
+        font-size: 20px;
+        line-height: 1.15;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 14px;
+      }
+
+      .lane-desc {
+        font-size: 14px;
+        line-height: 1.55;
+        color: var(--ink-muted);
+        margin-bottom: 18px;
+      }
+
+      .lane-output {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        line-height: 1.5;
+        color: var(--ink);
+        border-left: 2px solid var(--emerald);
+        padding-left: 10px;
+      }
+
       /* Method & Protocol Section */
       .protocol-list {
         display: flex;
@@ -809,6 +860,14 @@
           align-items: center;
         }
 
+        .lane-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .lane-card {
+          min-height: auto;
+        }
+
         .protocol-item {
           grid-template-columns: 1fr;
           gap: 8px;
@@ -1092,6 +1151,44 @@ VERIFY:    deployment hash matches source integrity</div>
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <!-- Service Lanes Section -->
+      <section id="lanes" class="section-container" aria-labelledby="lanes-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">SERVICE LANES</span>
+          <h2 class="section-title" id="lanes-title">Four lanes where the work usually lands.</h2>
+        </div>
+
+        <div class="lane-grid">
+          <article class="lane-card">
+            <div class="lane-kicker">01 / Rescue</div>
+            <h3 class="lane-title">AI-built MVP stabilization</h3>
+            <p class="lane-desc">For prototypes that look close but fail under real users, unclear state, broken auth, brittle data writes, or deployment drift.</p>
+            <div class="lane-output">Output: fault map, patched flow, test path, and handoff notes.</div>
+          </article>
+
+          <article class="lane-card">
+            <div class="lane-kicker">02 / Boundaries</div>
+            <h3 class="lane-title">Stripe, Supabase, and provider hardening</h3>
+            <p class="lane-desc">For payment state, webhooks, RLS, storage, service-role functions, API limits, and provider settings that need real verification.</p>
+            <div class="lane-output">Output: verified provider path, sync checks, and rollback notes.</div>
+          </article>
+
+          <article class="lane-card">
+            <div class="lane-kicker">03 / Workflow</div>
+            <h3 class="lane-title">Reviewable AI automation</h3>
+            <p class="lane-desc">For repeated business workflows where AI should draft, classify, enrich, or route work while humans keep approval control.</p>
+            <div class="lane-output">Output: input queue, AI step, review gate, logs, and approved output.</div>
+          </article>
+
+          <article class="lane-card">
+            <div class="lane-kicker">04 / Ops</div>
+            <h3 class="lane-title">Internal control boards</h3>
+            <p class="lane-desc">For teams that need one operational surface to inspect jobs, data, exceptions, approvals, users, or launch readiness.</p>
+            <div class="lane-output">Output: dashboard, acceptance checks, runbook, and next-slice backlog.</div>
+          </article>
+        </div>
       </section>
 
       <!-- Method & Protocol Section -->
