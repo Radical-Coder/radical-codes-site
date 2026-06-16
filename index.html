@@ -716,56 +716,6 @@
         padding-left: 10px;
       }
 
-      /* Method & Protocol Section */
-      .protocol-list {
-        display: flex;
-        flex-direction: column;
-        border-top: 2px solid var(--border);
-      }
-
-      .protocol-item {
-        display: grid;
-        grid-template-columns: 220px 1fr 240px;
-        gap: 32px;
-        padding: 28px 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .protocol-meta {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .protocol-num {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        color: var(--emerald);
-        font-weight: 700;
-        margin-bottom: 4px;
-      }
-
-      .protocol-title {
-        font-family: var(--font-display);
-        font-size: 18px;
-        font-weight: 800;
-        color: var(--ink);
-      }
-
-      .protocol-desc {
-        font-size: 15px;
-        line-height: 1.55;
-        color: var(--ink-muted);
-      }
-
-      .protocol-deliverable {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        line-height: 1.5;
-        color: var(--ink);
-        border-left: 2px solid var(--emerald);
-        padding-left: 12px;
-      }
-
       /* Engagement Model */
       .engagement-grid {
         display: grid;
@@ -832,46 +782,6 @@
         margin-top: 20px;
         display: flex;
         justify-content: flex-start;
-      }
-
-      /* Standards Section */
-      .standards-list {
-        display: flex;
-        flex-direction: column;
-        border-top: 2px solid var(--border);
-      }
-
-      .standards-item {
-        display: grid;
-        grid-template-columns: 220px 1fr 100px;
-        gap: 32px;
-        padding: 28px 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .standard-label {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        color: var(--ink);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .standard-desc {
-        font-size: 15px;
-        line-height: 1.55;
-        color: var(--ink-muted);
-      }
-
-      .standard-status {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        font-weight: 700;
-        color: var(--emerald);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        text-align: right;
       }
 
       /* Boundary Checklist */
@@ -1135,16 +1045,6 @@
           min-height: auto;
         }
 
-        .protocol-item {
-          grid-template-columns: 1fr;
-          gap: 8px;
-          padding: 20px 0;
-        }
-
-        .protocol-deliverable {
-          margin-top: 4px;
-        }
-
         .engagement-grid {
           grid-template-columns: 1fr;
         }
@@ -1156,16 +1056,6 @@
         .engagement-step + .engagement-step {
           border-left: none;
           padding-left: 0;
-        }
-
-        .standards-item {
-          grid-template-columns: 1fr;
-          gap: 8px;
-          padding: 20px 0;
-        }
-
-        .standard-status {
-          text-align: left;
         }
 
         .boundary-list {
@@ -1532,60 +1422,6 @@ VERIFY:    deployment hash matches source integrity</div>
         </div>
       </section>
 
-      <!-- Method & Protocol Section -->
-      <section id="method" class="section-container" aria-labelledby="method-title" style="border-top: 2px solid var(--border);">
-        <div class="section-header">
-          <span class="section-eyebrow">METHOD & PROTOCOL</span>
-          <h2 class="section-title" id="method-title">Technical diagnostics to production handoff.</h2>
-        </div>
-        
-        <div class="protocol-list">
-          <div class="protocol-item">
-            <div class="protocol-meta">
-              <span class="protocol-num">01 / AUDIT & DIAGNOSE</span>
-              <h3 class="protocol-title">Root Cause Analysis</h3>
-            </div>
-            <div class="protocol-desc">
-              I review your existing codebase, API configurations, and deployment logs to identify memory leaks, race conditions, database index bottlenecks, or unhandled exceptions.
-            </div>
-            <div class="protocol-deliverable">Deliverable: fault map, scope brief, and success criteria.</div>
-          </div>
-          
-          <div class="protocol-item">
-            <div class="protocol-meta">
-              <span class="protocol-num">02 / PROTOTYPE</span>
-              <h3 class="protocol-title">Sandboxed Proofs</h3>
-            </div>
-            <div class="protocol-desc">
-              I build a live, working surface in an isolated sandbox environment to demonstrate how the resolved integration will function under simulated stress before writing final production changes.
-            </div>
-            <div class="protocol-deliverable">Deliverable: clickable proof, data model, and integration plan.</div>
-          </div>
-          
-          <div class="protocol-item">
-            <div class="protocol-meta">
-              <span class="protocol-num">03 / EXECUTE & HARDEN</span>
-              <h3 class="protocol-title">Logical Refactoring</h3>
-            </div>
-            <div class="protocol-desc">
-              I refactor critical integration layers, implement automated retry fallbacks, secure API keys and headers, enforce strict validation, and deploy via robust CI/CD environments.
-            </div>
-            <div class="protocol-deliverable">Deliverable: production PR, deployment recipe, and validation checks.</div>
-          </div>
-          
-          <div class="protocol-item">
-            <div class="protocol-meta">
-              <span class="protocol-num">04 / MONITOR & OPERATE</span>
-              <h3 class="protocol-title">Continuous Telemetry</h3>
-            </div>
-            <div class="protocol-desc">
-              I integrate real-time error tracking and telemetry, and construct a lightweight control dashboard so your operational team has absolute visibility 24/7.
-            </div>
-            <div class="protocol-deliverable">Deliverable: alerts, runbook, and operational dashboard.</div>
-          </div>
-        </div>
-      </section>
-
       <!-- Engagement Model Section -->
       <section id="engagement" class="section-container" aria-labelledby="engagement-title" style="border-top: 2px solid var(--border);">
         <div class="section-header">
@@ -1624,48 +1460,6 @@ VERIFY:    deployment hash matches source integrity</div>
           <a href="mailto:coderradical@gmail.com?subject=First%20slice%20diagnostic" class="btn btn-blue btn-lg" id="engagement-diagnostic-link">
             Start with a Diagnostic
           </a>
-        </div>
-      </section>
-
-      <!-- Standards Section -->
-      <section id="standards" class="section-container" aria-labelledby="standards-title" style="border-top: 2px solid var(--border);">
-        <div class="section-header">
-          <span class="section-eyebrow">STANDARDS</span>
-          <h2 class="section-title" id="standards-title">Operational rules I build by.</h2>
-        </div>
-        
-        <div class="standards-list">
-          <div class="standards-item">
-            <span class="standard-label">Fixed-Scope Agreements</span>
-            <div class="standard-desc">
-              I scope every project to a binary success criteria. No open-ended billing cycles, no surprise hourly creep. You pay for predefined operational results.
-            </div>
-            <span class="standard-status">Required</span>
-          </div>
-          
-          <div class="standards-item">
-            <span class="standard-label">Demos-First Commitment</span>
-            <div class="standard-desc">
-              You see and interact with a live, functional sandbox mockup demonstrating critical mechanics before you commit to signing a full project contract.
-            </div>
-            <span class="standard-status">Required</span>
-          </div>
-          
-          <div class="standards-item">
-            <span class="standard-label">Direct Engineering</span>
-            <div class="standard-desc">
-              Zero account managers, project coordinators, or sales buffers. You work directly with Ryan Gonyon—the engineer shaping the architecture, reviewing the code, and managing the implementation.
-            </div>
-            <span class="standard-status">Required</span>
-          </div>
-          
-          <div class="standards-item">
-            <span class="standard-label">Built for Handoff</span>
-            <div class="standard-desc">
-              Every deliverable is clean, self-documenting, covered by test suites, and packaged with clear deployment recipes so any engineer can operate it.
-            </div>
-            <span class="standard-status">Required</span>
-          </div>
         </div>
       </section>
 
