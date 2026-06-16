@@ -514,6 +514,55 @@
         letter-spacing: -0.01em;
       }
 
+      /* Fit Matrix */
+      .fit-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 48px;
+      }
+
+      .fit-panel {
+        border-top: 2px solid var(--border);
+        padding-top: 20px;
+      }
+
+      .fit-label {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--emerald);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      .fit-title {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 18px;
+      }
+
+      .fit-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        list-style: none;
+      }
+
+      .fit-list li {
+        border-left: 2px solid var(--border);
+        padding-left: 14px;
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--ink-muted);
+      }
+
+      .fit-list strong {
+        color: var(--ink);
+      }
+
       /* Proof Ledger Table */
       .ledger-table {
         width: 100%;
@@ -819,6 +868,11 @@
           grid-template-columns: 1fr;
           gap: 40px;
         }
+
+        .fit-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
       }
 
       @media (max-width: 768px) {
@@ -952,6 +1006,7 @@
         </a>
         
         <nav class="site-nav">
+          <a href="#fit" class="nav-link" id="nav-link-fit">Fit</a>
           <a href="#work" class="nav-link" id="nav-link-work">Work</a>
           <a href="#method" class="nav-link" id="nav-link-method">Method</a>
           <a href="#standards" class="nav-link" id="nav-link-standards">Standards</a>
@@ -1083,6 +1138,38 @@ VERIFY:    deployment hash matches source integrity</div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Buyer Fit Matrix -->
+      <section id="fit" class="section-container" aria-labelledby="fit-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">FIT MATRIX</span>
+          <h2 class="section-title" id="fit-title">Best when the system already matters.</h2>
+        </div>
+
+        <div class="fit-grid">
+          <div class="fit-panel">
+            <div class="fit-label">Good Fit</div>
+            <h3 class="fit-title">Bring the problem when usage exposed the risk.</h3>
+            <ul class="fit-list">
+              <li><strong>AI-built or legacy app rescue:</strong> the product looks close, but auth, data, billing, deployment, or background jobs are not dependable yet.</li>
+              <li><strong>Workflow automation with review:</strong> messy inputs need AI processing, human approval, audit logs, and a clean handoff path.</li>
+              <li><strong>Stripe, Supabase, and integration hardening:</strong> checkout, webhooks, RLS, storage, API calls, or provider state need proof beyond the UI.</li>
+              <li><strong>Bounded first slice:</strong> you want a fault map, live proof surface, and acceptance criteria before committing to a larger build.</li>
+            </ul>
+          </div>
+
+          <div class="fit-panel">
+            <div class="fit-label">Not a Fit</div>
+            <h3 class="fit-title">Avoid it if the work is still only a vague idea.</h3>
+            <ul class="fit-list">
+              <li><strong>Generic landing pages:</strong> visual polish alone is not the core service here.</li>
+              <li><strong>Open-ended rebuilds:</strong> large vague scopes need to become a diagnostic, proof, and first production slice first.</li>
+              <li><strong>No system access:</strong> production readiness claims require code, logs, deployment state, provider settings, or real workflow examples.</li>
+              <li><strong>Unreviewed AI output:</strong> useful automation needs checkpoints, traceability, and a human-approved final state.</li>
+            </ul>
           </div>
         </div>
       </section>
