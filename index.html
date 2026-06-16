@@ -874,6 +874,45 @@
         text-align: right;
       }
 
+      /* Boundary Checklist */
+      .boundary-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        border-top: 2px solid var(--border);
+        border-left: 2px solid var(--border);
+      }
+
+      .boundary-item {
+        border-right: 2px solid var(--border);
+        border-bottom: 2px solid var(--border);
+        padding: 22px;
+      }
+
+      .boundary-label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--emerald);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .boundary-title {
+        font-family: var(--font-display);
+        font-size: 19px;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 10px;
+      }
+
+      .boundary-desc {
+        font-size: 14.5px;
+        line-height: 1.55;
+        color: var(--ink-muted);
+      }
+
       /* About Section */
       .about-grid {
         display: grid;
@@ -1127,6 +1166,10 @@
 
         .standard-status {
           text-align: left;
+        }
+
+        .boundary-list {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -1621,6 +1664,40 @@ VERIFY:    deployment hash matches source integrity</div>
               Every deliverable is clean, self-documenting, covered by test suites, and packaged with clear deployment recipes so any engineer can operate it.
             </div>
             <span class="standard-status">Required</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Boundary Checklist Section -->
+      <section id="boundaries" class="section-container" aria-labelledby="boundaries-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">BOUNDARY CHECKS</span>
+          <h2 class="section-title" id="boundaries-title">Production readiness is provider truth, not UI confidence.</h2>
+        </div>
+
+        <div class="boundary-list">
+          <div class="boundary-item">
+            <div class="boundary-label">Stripe</div>
+            <h3 class="boundary-title">Payment state and webhook reconciliation</h3>
+            <p class="boundary-desc">Checkout screens are not enough. Subscription state, customer records, webhook signatures, retries, portal paths, refunds, and account access all need separate proof.</p>
+          </div>
+
+          <div class="boundary-item">
+            <div class="boundary-label">Supabase</div>
+            <h3 class="boundary-title">Auth, RLS, storage, and edge function boundaries</h3>
+            <p class="boundary-desc">Policies, service-role calls, storage paths, function JWT settings, migrations, and generated types need to match the runtime behavior users actually hit.</p>
+          </div>
+
+          <div class="boundary-item">
+            <div class="boundary-label">AI Providers</div>
+            <h3 class="boundary-title">Usage caps, review gates, and output traceability</h3>
+            <p class="boundary-desc">Useful AI features need server-side keys, constrained prompts, budget limits, fallback behavior, and logs that show who approved or rejected generated work.</p>
+          </div>
+
+          <div class="boundary-item">
+            <div class="boundary-label">Deployments</div>
+            <h3 class="boundary-title">Source, environment, and production smoke proof</h3>
+            <p class="boundary-desc">A pushed commit is not a live fix. The deploy hash, environment values, migrations, provider settings, and smoke-test receipts all need to line up.</p>
           </div>
         </div>
       </section>
