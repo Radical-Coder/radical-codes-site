@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "vite build",
+    "check": "npm run build && npm audit --audit-level=high",
     "dev": "vite --host 0.0.0.0"
   },
   "dependencies": {
