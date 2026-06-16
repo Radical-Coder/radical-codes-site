@@ -506,6 +506,14 @@
         text-transform: uppercase;
       }
 
+      .section-note {
+        max-width: 760px;
+        margin-top: 14px;
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink-muted);
+      }
+
       .section-title {
         font-family: var(--font-display);
         font-size: clamp(24px, 3.5vw, 36px);
@@ -1135,6 +1143,7 @@ VERIFY:    deployment hash matches source integrity</div>
                   <a href="https://www.automarkets.com.au/" class="console-link" id="proof-board-automarkets-link" target="_blank" rel="noopener">[LINK] AutoMarkets Live Marketplace &rarr;</a>
                   <a href="https://mygradhub-mvp-demo.vercel.app" class="console-link" id="proof-board-mygradhub-link" target="_blank" rel="noopener">[LINK] MyGradHub MVP Demo &rarr;</a>
                   <a href="https://mvp-launch-readiness-console.vercel.app" class="console-link" id="proof-board-readiness-link" target="_blank" rel="noopener">[LINK] MVP Launch Readiness Console &rarr;</a>
+                  <a href="https://github.com/Radical-Coder/data-flow-canvas-mvp" class="console-link" id="proof-board-data-flow-link" target="_blank" rel="noopener">[LINK] Data Flow Canvas Source &rarr;</a>
                 </div>
               </div>
             </div>
@@ -1179,6 +1188,7 @@ VERIFY:    deployment hash matches source integrity</div>
         <div class="section-header">
           <span class="section-eyebrow">PROOF LEDGER</span>
           <h2 class="section-title" id="ledger-title">Real work. Real systems. Real impact.</h2>
+          <p class="section-note">The useful proof is not a screenshot. It is a live surface, public source, or operational handoff that shows how the risk was bounded, tested, and made legible.</p>
         </div>
         
         <table class="ledger-table" aria-describedby="ledger-title">
@@ -1254,7 +1264,28 @@ VERIFY:    deployment hash matches source integrity</div>
                 <a href="https://mygradhub-mvp-demo.vercel.app" class="ledger-link" id="mygradhub-case-study-link" target="_blank" rel="noopener">Original Demo &rarr;</a>
               </td>
             </tr>
-            <!-- Row 4: MVP Launch Readiness -->
+            <!-- Row 4: Data Flow Canvas -->
+            <tr id="case-study-data-flow-canvas">
+              <td data-label="Project">
+                <div class="ledger-project">
+                  <span class="project-mark" aria-hidden="true">DF</span>
+                  <div>
+                    <span class="ledger-project-name">Data Flow Canvas MVP</span>
+                    <span class="ledger-project-by">Workflow automation source proof</span>
+                  </div>
+                </div>
+              </td>
+              <td data-label="Risk Solved" class="ledger-risk-desc">
+                Small automations often become invisible glue: local inputs, API calls, browser paths, and outputs are hard to review or hand off.
+              </td>
+              <td data-label="Outcome" class="ledger-outcome-desc">
+                Public proof repo with a minimal pipeline that reads sample input, transforms data, calls an API, and exposes the same flow in Python and browser-runner form.
+              </td>
+              <td data-label="Proof">
+                <a href="https://github.com/Radical-Coder/data-flow-canvas-mvp" class="ledger-link" id="data-flow-canvas-case-study-link" target="_blank" rel="noopener">GitHub Repo &rarr;</a>
+              </td>
+            </tr>
+            <!-- Row 5: MVP Launch Readiness -->
             <tr id="case-study-readiness">
               <td data-label="Project">
                 <div class="ledger-project">
