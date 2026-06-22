@@ -43,6 +43,34 @@ function countMatches(html, pattern) {
   return html.match(pattern)?.length ?? 0;
 }
 
+/** Return a single HTML tag attribute value regardless of attribute ordering. */
+function getTagAttribute(tag, name) {
+  const pattern = new RegExp(`\\b${name}=["']([^"']*)["']`, "i");
+  return tag.match(pattern)?.[1] ?? "";
+}
+
+/** Count tags whose class list contains every required class token. */
+function countTagsWithClasses(html, tagName, classNames) {
+  const tags = html.match(new RegExp(`<${tagName}\\b[^>]*>`, "gi")) ?? [];
+  return tags.filter((tag) => {
+    const tokens = new Set(getTagAttribute(tag, "class").split(/\s+/).filter(Boolean));
+    return classNames.every((className) => tokens.has(className));
+  }).length;
+}
+
+/** Count external links hardened for a new browsing context. */
+function countBlankLinksWithSafeRel(html) {
+  const links = html.match(/<a\b[^>]*>/gi) ?? [];
+  return links.filter((link) => {
+    const relTokens = new Set(getTagAttribute(link, "rel").split(/\s+/).filter(Boolean));
+    return (
+      getTagAttribute(link, "target") === "_blank" &&
+      relTokens.has("noopener") &&
+      relTokens.has("noreferrer")
+    );
+  }).length;
+}
+
 /** Assert that a page exposes an order-insensitive skip-navigation target. */
 function expectSkipNavigation(html) {
   expect(html).toMatch(
@@ -154,9 +182,9 @@ describe("AI app rescue page metadata", () => {
   it("has skip navigation, optimized proof images, and hardened external links", () => {
     expectSkipNavigation(html);
     expect(html).not.toContain('style="border-top: 2px solid var(--border);"');
-    expect(countMatches(html, /class=["'][^"']*\bsection-container\b[^"']*\bbordered-section\b[^"']*["']/g)).toBe(6);
+    expect(countTagsWithClasses(html, "section", ["section-container", "bordered-section"])).toBe(6);
     expect(countMatches(html, /loading="lazy"/g)).toBeGreaterThanOrEqual(2);
-    expect(countMatches(html, /target="_blank"\s+rel="noopener noreferrer"/g)).toBeGreaterThanOrEqual(5);
+    expect(countBlankLinksWithSafeRel(html)).toBeGreaterThanOrEqual(5);
   });
 });
 
@@ -164,7 +192,9 @@ describe("shared stylesheet contracts", () => {
   const css = readProjectFile("styles.css");
 
   it("keeps the mobile package table header available to assistive technology", () => {
-    const mobileBlock = css.match(/@media \(max-width: 880px\) \{[\s\S]*?@media \(max-width: 560px\)/)?.[0];
+    const mobileBlockMatch = css.match(/@media \(max-width: 880px\) \{[\s\S]*?@media \(max-width: 560px\)/);
+    expect(mobileBlockMatch).not.toBeNull();
+    const mobileBlock = mobileBlockMatch?.[0] ?? "";
     expect(mobileBlock).toContain(".package-head");
     expect(mobileBlock).toMatch(/\.package-head\s*\{[\s\S]*clip-path:\s*inset\(100%\)/);
     expect(mobileBlock).not.toMatch(/\.package-head\s*\{[\s\S]*display:\s*none/);
