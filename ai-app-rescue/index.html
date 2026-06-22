@@ -136,6 +136,34 @@
         overflow-x: hidden;
       }
 
+      .skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 200;
+        padding: 10px 14px;
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        background: #ffffff;
+        color: var(--ink);
+        font-family: var(--font-display);
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-12px);
+        transition:
+          opacity 120ms ease,
+          transform 120ms ease;
+      }
+
+      .skip-link:focus-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
       img,
       video {
         max-width: 100%;
@@ -241,6 +269,10 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 80px 24px;
+      }
+
+      .bordered-section {
+        border-top: 2px solid var(--border);
       }
 
       .hero-section {
@@ -880,6 +912,7 @@
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="header-container">
         <a href="/" class="brand-wordmark">RYAN GONYON<span class="brand-cursor">_</span></a>
@@ -890,12 +923,12 @@
           <a href="#book" class="nav-link">Book</a>
         </nav>
         <div class="header-cta">
-          <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Book on Upwork</a>
+          <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">Book on Upwork</a>
         </div>
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="section-container hero-section" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div>
@@ -921,7 +954,7 @@
             </div>
 
             <div class="hero-actions">
-              <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-blue btn-lg" target="_blank" rel="noopener">Book the Consultation</a>
+              <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-blue btn-lg" target="_blank" rel="noopener noreferrer">Book the Consultation</a>
               <a href="#proof" class="btn btn-outline btn-lg">See Proof &darr;</a>
             </div>
           </div>
@@ -938,7 +971,7 @@
         </div>
       </section>
 
-      <section id="fit" class="section-container" aria-labelledby="fit-title" style="border-top: 2px solid var(--border);">
+      <section id="fit" class="section-container bordered-section" aria-labelledby="fit-title">
         <div class="section-header">
           <span class="section-eyebrow">BEST FIT</span>
           <h2 class="section-title" id="fit-title">Use this when the demo exists, but trust does not.</h2>
@@ -975,7 +1008,7 @@
         </div>
       </section>
 
-      <section id="deliverables" class="section-container" aria-labelledby="deliverables-title" style="border-top: 2px solid var(--border);">
+      <section id="deliverables" class="section-container bordered-section" aria-labelledby="deliverables-title">
         <div class="section-header">
           <span class="section-eyebrow">CALL OUTPUT</span>
           <h2 class="section-title" id="deliverables-title">A working session with a concrete handoff.</h2>
@@ -1015,7 +1048,7 @@
         </div>
       </section>
 
-      <section class="section-container" aria-labelledby="scan-title" style="border-top: 2px solid var(--border);">
+      <section class="section-container bordered-section" aria-labelledby="scan-title">
         <div class="hero-grid">
           <div>
             <span class="section-eyebrow">RISK SCAN</span>
@@ -1061,7 +1094,7 @@
         </div>
       </section>
 
-      <section id="proof" class="section-container" aria-labelledby="proof-title" style="border-top: 2px solid var(--border);">
+      <section id="proof" class="section-container bordered-section" aria-labelledby="proof-title">
         <div class="section-header">
           <span class="section-eyebrow">PROOF SURFACE</span>
           <h2 class="section-title" id="proof-title">The offer has a real operating model behind it.</h2>
@@ -1069,14 +1102,14 @@
 
         <div class="proof-grid">
           <div class="media-card">
-            <img src="/assets/ai-app-rescue/ai-app-rescue-dashboard.png" alt="AI App Rescue dashboard with intake, risk scanner, scoped next move, and reviewed operating surfaces." />
+            <img src="/assets/ai-app-rescue/ai-app-rescue-dashboard.png" alt="AI App Rescue dashboard with intake, risk scanner, scoped next move, and reviewed operating surfaces." loading="lazy" decoding="async" />
             <div class="media-card-caption">
               <strong>AI App Rescue Console</strong>
               <span>An anonymized consultation dashboard showing intake, risk review, architecture mapping, and scoped next move.</span>
             </div>
           </div>
           <div class="media-card">
-            <img src="/assets/ai-app-rescue/mobile-responsive-proof.png" alt="Mobile responsive view of the AI App Rescue dashboard." />
+            <img src="/assets/ai-app-rescue/mobile-responsive-proof.png" alt="Mobile responsive view of the AI App Rescue dashboard." loading="lazy" decoding="async" />
             <div class="media-card-caption">
               <strong>Mobile-ready proof</strong>
               <span>The same workflow compressed for a founder reviewing the plan from a phone.</span>
@@ -1085,7 +1118,7 @@
         </div>
       </section>
 
-      <section class="section-container" aria-labelledby="ledger-title" style="border-top: 2px solid var(--border);">
+      <section class="section-container bordered-section" aria-labelledby="ledger-title">
         <div class="section-header">
           <span class="section-eyebrow">RELATED WORK</span>
           <h2 class="section-title" id="ledger-title">Relevant systems and proof paths.</h2>
@@ -1127,7 +1160,7 @@
               </td>
               <td data-label="Why it matters" class="ledger-risk-desc">Retail catalog data needed controlled AI usage, review queues, audit trail, and export paths.</td>
               <td data-label="Output" class="ledger-outcome-desc">Live operator console with source-row staging, entity review, approval workflow, and usage caps.</td>
-              <td data-label="Link"><a href="https://ai-platform-catalog-intelligence-de.vercel.app" class="ledger-link" target="_blank" rel="noopener">Live MVP &rarr;</a></td>
+              <td data-label="Link"><a href="https://ai-platform-catalog-intelligence-de.vercel.app" class="ledger-link" target="_blank" rel="noopener noreferrer">Live MVP &rarr;</a></td>
             </tr>
             <tr>
               <td data-label="Proof">
@@ -1141,20 +1174,20 @@
               </td>
               <td data-label="Why it matters" class="ledger-risk-desc">Production workflows required operational clarity across listings, lead paths, review, SEO, and visibility rules.</td>
               <td data-label="Output" class="ledger-outcome-desc">Hardened marketplace and management-side workflows in a real operating environment.</td>
-              <td data-label="Link"><a href="https://www.automarkets.com.au/" class="ledger-link" target="_blank" rel="noopener">Live Site &rarr;</a></td>
+              <td data-label="Link"><a href="https://www.automarkets.com.au/" class="ledger-link" target="_blank" rel="noopener noreferrer">Live Site &rarr;</a></td>
             </tr>
           </tbody>
         </table>
       </section>
 
-      <section id="book" class="section-container" style="border-top: 2px solid var(--border);">
+      <section id="book" class="section-container bordered-section">
         <div class="cta-panel">
           <div>
             <h2 class="cta-title">If the app looks 80% done but you do not trust it yet, this is the right call.</h2>
             <p class="cta-copy">Book through Upwork for the cleanest payment/review path, or email me if you need to send context before booking.</p>
           </div>
           <div class="hero-actions">
-            <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-blue btn-lg" target="_blank" rel="noopener">Book on Upwork</a>
+            <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-blue btn-lg" target="_blank" rel="noopener noreferrer">Book on Upwork</a>
             <a href="mailto:coderradical@gmail.com?subject=AI%20App%20Rescue%20Consultation" class="btn btn-outline btn-lg">Email Ryan</a>
           </div>
         </div>

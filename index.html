@@ -141,8 +141,9 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Ryan Gonyon home">
+      <a class="brand" href="/" aria-label="Ryan Gonyon home">
         <span class="brand-mark">RG</span>
         <span class="brand-copy">
           <strong>Ryan Gonyon</strong>
@@ -161,7 +162,7 @@
       <a class="header-cta" href="/ai-app-rescue/">Start a project</a>
 
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
-        <span class="sr-only">Open navigation</span>
+        <span class="sr-only" data-menu-label>Open navigation</span>
         <span></span>
         <span></span>
         <span></span>
@@ -176,7 +177,7 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <main id="top">
+    <main id="main-content" tabindex="-1">
       <section class="hero section">
         <div class="hero-copy">
           <h1>Reviewable AI systems and app rescue for software that already matters.</h1>
@@ -230,6 +231,7 @@
               width="1815"
               height="866"
               alt="Laptop showing a workflow dashboard with review cards and approved outputs"
+              decoding="async"
               fetchpriority="high"
             />
             <figcaption>
@@ -368,6 +370,8 @@
                 width="1440"
                 height="980"
                 alt="AutoMarkets live listing search page with collector car filters and market cards"
+                loading="lazy"
+                decoding="async"
               />
             </figure>
             <div class="proof-case-body">
@@ -392,6 +396,8 @@
                 width="1440"
                 height="980"
                 alt="MyGradHub MVP feed with student profile, vendor discovery, bookings, and admin console tabs"
+                loading="lazy"
+                decoding="async"
               />
             </figure>
             <div class="proof-case-body">
@@ -408,6 +414,8 @@
                 width="1440"
                 height="980"
                 alt="Radical Workflow canvas showing connected prompt, generator, notes, and app preview nodes"
+                loading="lazy"
+                decoding="async"
               />
             </figure>
             <div class="proof-case-body">
@@ -424,6 +432,8 @@
                 width="1440"
                 height="900"
                 alt="Internal AI workspace with source text, executive summary output, and action items"
+                loading="lazy"
+                decoding="async"
               />
             </figure>
             <div class="proof-case-body">
@@ -440,6 +450,8 @@
                 width="1440"
                 height="900"
                 alt="Internal AI admin dashboard with processing metrics and recent AI actions"
+                loading="lazy"
+                decoding="async"
               />
             </figure>
             <div class="proof-case-body">
@@ -532,28 +544,28 @@
             <span role="columnheader">Included</span>
           </div>
           <div class="package-row" role="row">
-            <span role="cell">Workflow Audit</span>
-            <span role="cell">$500-$1,500</span>
-            <span role="cell">A team that needs workflow, risk, and build path clarity before coding.</span>
-            <span role="cell">Workflow map, examples review, risk notes, first-sprint recommendation.</span>
+            <span role="cell" data-label="Package">Workflow Audit</span>
+            <span role="cell" data-label="Range">$500-$1,500</span>
+            <span role="cell" data-label="Best for">A team that needs workflow, risk, and build path clarity before coding.</span>
+            <span role="cell" data-label="Included">Workflow map, examples review, risk notes, first-sprint recommendation.</span>
           </div>
           <div class="package-row featured" role="row">
-            <span role="cell">Automation Sprint</span>
-            <span role="cell">$2,500-$7,500</span>
-            <span role="cell">One repeated workflow with messy input, human review, and a real output destination.</span>
-            <span role="cell">Working lane, review queue, output handoff, logs, docs, tuning notes.</span>
+            <span role="cell" data-label="Package">Automation Sprint</span>
+            <span role="cell" data-label="Range">$2,500-$7,500</span>
+            <span role="cell" data-label="Best for">One repeated workflow with messy input, human review, and a real output destination.</span>
+            <span role="cell" data-label="Included">Working lane, review queue, output handoff, logs, docs, tuning notes.</span>
           </div>
           <div class="package-row" role="row">
-            <span role="cell">AI App Rescue</span>
-            <span role="cell">$500 consultation or scoped milestone</span>
-            <span role="cell">A tool-built app nearing users, payments, private data, or handoff pressure.</span>
-            <span role="cell">Risk map, launch checklist, fix-now / fix-next plan, milestone scope.</span>
+            <span role="cell" data-label="Package">AI App Rescue</span>
+            <span role="cell" data-label="Range">$500 consultation or scoped milestone</span>
+            <span role="cell" data-label="Best for">A tool-built app nearing users, payments, private data, or handoff pressure.</span>
+            <span role="cell" data-label="Included">Risk map, launch checklist, fix-now / fix-next plan, milestone scope.</span>
           </div>
           <div class="package-row" role="row">
-            <span role="cell">Internal Dashboard MVP</span>
-            <span role="cell">$2,500-$7,500</span>
-            <span role="cell">A team replacing scattered status threads, sheets, and manual checks.</span>
-            <span role="cell">Operator surface, filters, status model, reporting, and handoff notes.</span>
+            <span role="cell" data-label="Package">Internal Dashboard MVP</span>
+            <span role="cell" data-label="Range">$2,500-$7,500</span>
+            <span role="cell" data-label="Best for">A team replacing scattered status threads, sheets, and manual checks.</span>
+            <span role="cell" data-label="Included">Operator surface, filters, status model, reporting, and handoff notes.</span>
           </div>
         </div>
       </section>
@@ -637,17 +649,22 @@
       };
 
       const menuButton = document.querySelector("[data-menu-button]");
+      const menuLabel = document.querySelector("[data-menu-label]");
       const mobileMenu = document.querySelector("[data-mobile-menu]");
 
+      function setMenuOpen(isOpen) {
+        menuButton?.setAttribute("aria-expanded", String(isOpen));
+        if (menuLabel) menuLabel.textContent = isOpen ? "Close navigation" : "Open navigation";
+        if (mobileMenu) mobileMenu.hidden = !isOpen;
+      }
+
       function closeMenu() {
-        menuButton?.setAttribute("aria-expanded", "false");
-        if (mobileMenu) mobileMenu.hidden = true;
+        setMenuOpen(false);
       }
 
       menuButton?.addEventListener("click", () => {
         const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-        menuButton.setAttribute("aria-expanded", String(!isOpen));
-        if (mobileMenu) mobileMenu.hidden = isOpen;
+        setMenuOpen(!isOpen);
       });
 
       mobileMenu?.querySelectorAll("a").forEach((link) => {
