@@ -162,7 +162,7 @@
       <a class="header-cta" href="/ai-app-rescue/">Start a project</a>
 
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
-        <span class="sr-only">Open navigation</span>
+        <span class="sr-only" data-menu-label>Open navigation</span>
         <span></span>
         <span></span>
         <span></span>
@@ -649,17 +649,22 @@
       };
 
       const menuButton = document.querySelector("[data-menu-button]");
+      const menuLabel = document.querySelector("[data-menu-label]");
       const mobileMenu = document.querySelector("[data-mobile-menu]");
 
+      function setMenuOpen(isOpen) {
+        menuButton?.setAttribute("aria-expanded", String(isOpen));
+        if (menuLabel) menuLabel.textContent = isOpen ? "Close navigation" : "Open navigation";
+        if (mobileMenu) mobileMenu.hidden = !isOpen;
+      }
+
       function closeMenu() {
-        menuButton?.setAttribute("aria-expanded", "false");
-        if (mobileMenu) mobileMenu.hidden = true;
+        setMenuOpen(false);
       }
 
       menuButton?.addEventListener("click", () => {
         const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-        menuButton.setAttribute("aria-expanded", String(!isOpen));
-        if (mobileMenu) mobileMenu.hidden = isOpen;
+        setMenuOpen(!isOpen);
       });
 
       mobileMenu?.querySelectorAll("a").forEach((link) => {

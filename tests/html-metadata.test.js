@@ -38,6 +38,21 @@ function publicAssetExists(absoluteUrl) {
   return existsSync(resolve(ROOT, "public", url.pathname.replace(/^\//, "")));
 }
 
+/** Count regex matches without making missing matches crash assertions. */
+function countMatches(html, pattern) {
+  return html.match(pattern)?.length ?? 0;
+}
+
+/** Assert that a page exposes an order-insensitive skip-navigation target. */
+function expectSkipNavigation(html) {
+  expect(html).toMatch(
+    /<a(?=[^>]*\bclass=["'][^"']*\bskip-link\b[^"']*["'])(?=[^>]*\bhref=["']#main-content["'])[^>]*>/i,
+  );
+  expect(html).toMatch(
+    /<main(?=[^>]*\bid=["']main-content["'])(?=[^>]*\btabindex=["']-1["'])[^>]*>/i,
+  );
+}
+
 describe("home page metadata", () => {
   const html = readProjectFile("index.html");
   const jsonLd = extractJsonLd(html);
@@ -87,18 +102,24 @@ describe("home page metadata", () => {
     expect(html).toContain("aria-pressed");
   });
 
+  it("keeps the mobile menu label synchronized with expanded state", () => {
+    expect(html).toContain("data-menu-label");
+    expect(html).toContain("Close navigation");
+    expect(html).toContain("setMenuOpen");
+  });
+
   it("has a keyboard skip link and optimized below-fold proof images", () => {
-    expect(html).toContain('class="skip-link" href="#main-content"');
-    expect(html).toContain('<main id="main-content" tabindex="-1">');
-    expect(html.match(/loading="lazy"/g)).toHaveLength(5);
-    expect(html.match(/decoding="async"/g)?.length).toBeGreaterThanOrEqual(6);
+    expectSkipNavigation(html);
+    expect(countMatches(html, /loading="lazy"/g)).toBeGreaterThanOrEqual(5);
+    expect(countMatches(html, /decoding="async"/g)).toBeGreaterThanOrEqual(6);
   });
 
   it("labels package cells for the stacked mobile pricing layout", () => {
-    expect(html.match(/data-label="Package"/g)).toHaveLength(4);
-    expect(html.match(/data-label="Range"/g)).toHaveLength(4);
-    expect(html.match(/data-label="Best for"/g)).toHaveLength(4);
-    expect(html.match(/data-label="Included"/g)).toHaveLength(4);
+    const packageLabelCount = countMatches(html, /data-label="Package"/g);
+    expect(packageLabelCount).toBeGreaterThanOrEqual(4);
+    expect(countMatches(html, /data-label="Range"/g)).toBe(packageLabelCount);
+    expect(countMatches(html, /data-label="Best for"/g)).toBe(packageLabelCount);
+    expect(countMatches(html, /data-label="Included"/g)).toBe(packageLabelCount);
   });
 });
 
@@ -131,11 +152,27 @@ describe("AI app rescue page metadata", () => {
   });
 
   it("has skip navigation, optimized proof images, and hardened external links", () => {
-    expect(html).toContain('class="skip-link" href="#main-content"');
-    expect(html).toContain('<main id="main-content" tabindex="-1">');
+    expectSkipNavigation(html);
     expect(html).not.toContain('style="border-top: 2px solid var(--border);"');
-    expect(html.match(/class="section-container bordered-section/g)).toHaveLength(6);
-    expect(html.match(/loading="lazy"/g)).toHaveLength(2);
-    expect(html.match(/target="_blank" rel="noopener noreferrer"/g)).toHaveLength(5);
+    expect(countMatches(html, /class=["'][^"']*\bsection-container\b[^"']*\bbordered-section\b[^"']*["']/g)).toBe(6);
+    expect(countMatches(html, /loading="lazy"/g)).toBeGreaterThanOrEqual(2);
+    expect(countMatches(html, /target="_blank"\s+rel="noopener noreferrer"/g)).toBeGreaterThanOrEqual(5);
+  });
+});
+
+describe("shared stylesheet contracts", () => {
+  const css = readProjectFile("styles.css");
+
+  it("keeps the mobile package table header available to assistive technology", () => {
+    const mobileBlock = css.match(/@media \(max-width: 880px\) \{[\s\S]*?@media \(max-width: 560px\)/)?.[0];
+    expect(mobileBlock).toContain(".package-head");
+    expect(mobileBlock).toMatch(/\.package-head\s*\{[\s\S]*clip-path:\s*inset\(100%\)/);
+    expect(mobileBlock).not.toMatch(/\.package-head\s*\{[\s\S]*display:\s*none/);
+  });
+
+  it("shows a distinct menu icon state when mobile navigation is expanded", () => {
+    expect(css).toContain('.menu-button[aria-expanded="true"] span:nth-child(2)');
+    expect(css).toContain('.menu-button[aria-expanded="true"] span:nth-child(3)');
+    expect(css).toContain('.menu-button[aria-expanded="true"] span:nth-child(4)');
   });
 });
