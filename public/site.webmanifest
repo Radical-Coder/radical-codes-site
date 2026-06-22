@@ -1,0 +1,9 @@
+{
+  "name": "radical.codes",
+  "short_name": "radical.codes",
+  "description": "Ryan Gonyon's proof surface for reviewable AI systems, app rescue, and workflow automation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080a0e",
+  "theme_color": "#080a0e"
+}
