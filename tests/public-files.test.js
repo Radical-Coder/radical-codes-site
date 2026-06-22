@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const PUBLIC = resolve(ROOT, "public");
 
+/** Read a public file as UTF-8 text for static discovery-file assertions. */
 function readPublicFile(path) {
   return readFileSync(resolve(PUBLIC, path), "utf8");
 }
