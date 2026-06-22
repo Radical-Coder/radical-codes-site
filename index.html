@@ -370,11 +370,11 @@
           </div>
 
           <div>
-            <div class="workflow-controls" role="tablist" aria-label="Workflow examples">
-              <button class="segment active" type="button" role="tab" aria-selected="true" data-workflow="intake">Intake</button>
-              <button class="segment" type="button" role="tab" aria-selected="false" data-workflow="docs">Documents</button>
-              <button class="segment" type="button" role="tab" aria-selected="false" data-workflow="support">Support</button>
-              <button class="segment" type="button" role="tab" aria-selected="false" data-workflow="content">Content</button>
+            <div class="workflow-controls" aria-label="Workflow examples">
+              <button class="segment active" type="button" aria-pressed="true" data-workflow="intake">Intake</button>
+              <button class="segment" type="button" aria-pressed="false" data-workflow="docs">Documents</button>
+              <button class="segment" type="button" aria-pressed="false" data-workflow="support">Support</button>
+              <button class="segment" type="button" aria-pressed="false" data-workflow="content">Content</button>
             </div>
 
             <div class="workflow-demo" aria-live="polite">
@@ -551,7 +551,7 @@
           document.querySelectorAll("[data-workflow]").forEach((control) => {
             const selected = control === button;
             control.classList.toggle("active", selected);
-            control.setAttribute("aria-selected", String(selected));
+            control.setAttribute("aria-pressed", String(selected));
           });
 
           inputTitle.textContent = workflow.inputTitle;
