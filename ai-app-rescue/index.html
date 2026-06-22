@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI app rescue consultation for founders with Lovable, Replit, Cursor, Claude Code, React, Supabase, Vercel, Stripe, and AI workflow prototypes that need a real launch plan."
+    />
+    <link rel="canonical" href="https://radical.codes/ai-app-rescue/" />
+    <meta name="author" content="Ryan Gonyon" />
+    <meta property="og:title" content="AI App Rescue Consultation | Ryan Gonyon" />
+    <meta
+      property="og:description"
+      content="Turn an AI-built prototype into a risk map, scoped first milestone, and verification checklist."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://radical.codes/ai-app-rescue/" />
+    <meta property="og:site_name" content="radical.codes" />
+    <meta property="og:image" content="https://radical.codes/assets/ai-app-rescue/ai-app-rescue-dashboard.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="AI App Rescue dashboard with intake, risk scanner, scoped next move, and reviewed operating surfaces." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI App Rescue Consultation | Ryan Gonyon" />
+    <meta
+      name="twitter:description"
+      content="Turn an AI-built prototype into a risk map, scoped first milestone, and verification checklist."
+    />
+    <meta name="twitter:image" content="https://radical.codes/assets/ai-app-rescue/ai-app-rescue-dashboard.png" />
+    <meta name="twitter:image:alt" content="AI App Rescue dashboard with launch risk and operating proof surfaces." />
+    <meta name="theme-color" content="#000000" />
+    <title>AI App Rescue Consultation | Ryan Gonyon</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://radical.codes/#ryan-gonyon",
+            "name": "Ryan Gonyon",
+            "url": "https://radical.codes/",
+            "email": "mailto:coderradical@gmail.com",
+            "jobTitle": "Software engineer",
+            "sameAs": [
+              "https://github.com/Radical-Coder"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://radical.codes/ai-app-rescue/#page",
+            "url": "https://radical.codes/ai-app-rescue/",
+            "name": "AI App Rescue Consultation | Ryan Gonyon",
+            "isPartOf": {
+              "@id": "https://radical.codes/#website"
+            },
+            "about": {
+              "@id": "https://radical.codes/ai-app-rescue/#service"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://radical.codes/assets/ai-app-rescue/ai-app-rescue-dashboard.png",
+              "width": 1600,
+              "height": 1200
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://radical.codes/#website",
+            "name": "radical.codes",
+            "url": "https://radical.codes/",
+            "publisher": {
+              "@id": "https://radical.codes/#ryan-gonyon"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://radical.codes/ai-app-rescue/#service",
+            "name": "AI App Rescue Consultation",
+            "provider": {
+              "@id": "https://radical.codes/#ryan-gonyon"
+            },
+            "serviceType": "AI-built app production readiness consultation",
+            "areaServed": "United States",
+            "url": "https://radical.codes/ai-app-rescue/",
+            "description": "A focused consultation for founders with AI-built prototypes that need a risk map, scoped first milestone, and verification checklist before launch."
+          }
+        ]
+      }
+    </script>
+
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        color-scheme: light;
+        --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        --font-display: 'Outfit', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        --font-mono: 'JetBrains Mono', monospace;
+        --ink: #000000;
+        --ink-muted: #1f2937;
+        --ink-light: #4b5563;
+        --border: #000000;
+        --emerald: #059669;
+        --emerald-dot: #10b981;
+        --emerald-bg: #ecfdf5;
+        --blue: #0052ff;
+        --blue-hover: #003db3;
+        --red-bg: #fee2e2;
+        --red: #b91c1c;
+        --amber-bg: #fef3c7;
+        --amber: #92400e;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        color: var(--ink);
+        background: #ffffff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+
+      img,
+      video {
+        max-width: 100%;
+        display: block;
+      }
+
+      .site-header {
+        border-bottom: 2px solid var(--border);
+        position: sticky;
+        top: 0;
+        background: #ffffff;
+        z-index: 100;
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand-wordmark {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: var(--ink);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .brand-cursor {
+        color: var(--emerald);
+        font-weight: 800;
+        margin-left: 2px;
+      }
+
+      .site-nav {
+        display: flex;
+        gap: 24px;
+      }
+
+      .nav-link {
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .nav-link:hover {
+        color: var(--blue);
+      }
+
+      .btn {
+        font-family: var(--font-display);
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 2px solid var(--border);
+      }
+
+      .btn-blue {
+        background: var(--blue);
+        color: #ffffff;
+        border-color: var(--blue);
+      }
+
+      .btn-blue:hover {
+        background: var(--blue-hover);
+        border-color: var(--blue-hover);
+      }
+
+      .btn-outline {
+        background: #ffffff;
+        color: var(--ink);
+        border-color: var(--border);
+      }
+
+      .btn-outline:hover {
+        background: #f9fafb;
+      }
+
+      .btn-sm {
+        padding: 6px 14px;
+        font-size: 13px;
+      }
+
+      .btn-lg {
+        padding: 12px 24px;
+        font-size: 15px;
+      }
+
+      .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 24px;
+      }
+
+      .hero-section {
+        padding-top: 72px;
+        padding-bottom: 56px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.02fr 0.98fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      .kicker {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--emerald);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(38px, 5vw, 64px);
+        line-height: 1.02;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+
+      .hero-title-accent {
+        color: var(--emerald);
+      }
+
+      .hero-lede {
+        font-size: clamp(16px, 1.8vw, 18px);
+        line-height: 1.6;
+        color: var(--ink-muted);
+        margin-bottom: 32px;
+        max-width: 720px;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .hero-signal-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0 0 32px;
+      }
+
+      .hero-signal {
+        border-left: 2px solid var(--border);
+        padding-left: 12px;
+      }
+
+      .hero-signal strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 14px;
+        line-height: 1.2;
+        color: var(--ink);
+        margin-bottom: 4px;
+      }
+
+      .hero-signal span {
+        display: block;
+        font-size: 12px;
+        line-height: 1.35;
+        color: var(--ink-light);
+      }
+
+      .proof-video {
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        background: #000000;
+        overflow: hidden;
+      }
+
+      .proof-video video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .proof-caption {
+        border-top: 2px solid var(--border);
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        background: #ffffff;
+      }
+
+      .status-inline {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--emerald-dot);
+        border-radius: 50%;
+      }
+
+      .section-header {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 16px;
+        margin-bottom: 32px;
+      }
+
+      .section-eyebrow {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--emerald);
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 3.5vw, 36px);
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+
+      .section-intro {
+        color: var(--ink-muted);
+        font-size: 16px;
+        line-height: 1.65;
+        max-width: 760px;
+        margin-top: -12px;
+        margin-bottom: 28px;
+      }
+
+      .fit-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 2px solid var(--border);
+        border-left: 2px solid var(--border);
+      }
+
+      .fit-card {
+        min-height: 210px;
+        padding: 22px;
+        border-right: 2px solid var(--border);
+        border-bottom: 2px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .fit-num {
+        font-family: var(--font-mono);
+        color: var(--emerald);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .fit-title {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 1.15;
+        margin: 18px 0 10px;
+      }
+
+      .fit-desc {
+        color: var(--ink-muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .console {
+        font-family: var(--font-mono);
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        background: #ffffff;
+        color: var(--ink);
+        overflow: hidden;
+      }
+
+      .console-header {
+        background: var(--ink);
+        color: #ffffff;
+        padding: 8px 12px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .console-section {
+        border-bottom: 1px solid var(--border);
+        padding: 12px;
+      }
+
+      .console-section:last-child {
+        border-bottom: none;
+      }
+
+      .console-label {
+        font-size: 9px;
+        font-weight: 700;
+        color: var(--ink-light);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .risk-row {
+        display: grid;
+        grid-template-columns: 140px 1fr 92px;
+        gap: 10px;
+        padding: 7px 0;
+        border-top: 1px solid #e5e7eb;
+        font-size: 11px;
+        line-height: 1.4;
+      }
+
+      .risk-row:first-of-type {
+        border-top: none;
+      }
+
+      .risk-name {
+        font-weight: 700;
+      }
+
+      .risk-note {
+        color: var(--ink-muted);
+      }
+
+      .risk-pill {
+        justify-self: end;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 2px 8px;
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .risk-pill-critical {
+        background: var(--red-bg);
+        color: var(--red);
+        border-color: var(--red);
+      }
+
+      .risk-pill-review {
+        background: var(--amber-bg);
+        color: var(--amber);
+        border-color: var(--amber);
+      }
+
+      .risk-pill-safe {
+        background: var(--emerald-bg);
+        color: var(--emerald);
+        border-color: var(--emerald);
+      }
+
+      .protocol-list {
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid var(--border);
+      }
+
+      .protocol-item {
+        display: grid;
+        grid-template-columns: 220px 1fr 240px;
+        gap: 32px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .protocol-meta {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .protocol-num {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--emerald);
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .protocol-title {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--ink);
+      }
+
+      .protocol-desc {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink-muted);
+      }
+
+      .protocol-deliverable {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        line-height: 1.5;
+        color: var(--ink);
+        border-left: 2px solid var(--emerald);
+        padding-left: 12px;
+      }
+
+      .proof-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .media-card {
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .media-card img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .media-card-caption {
+        border-top: 2px solid var(--border);
+        padding: 14px;
+      }
+
+      .media-card-caption strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+
+      .media-card-caption span {
+        color: var(--ink-light);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .ledger-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+      .ledger-table th {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 2px solid var(--border);
+        padding: 12px 8px;
+        color: var(--ink-light);
+      }
+
+      .ledger-table tr {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ledger-table td {
+        padding: 24px 8px;
+        vertical-align: top;
+        font-size: 14.5px;
+        line-height: 1.5;
+        color: var(--ink);
+      }
+
+      .ledger-project {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .project-mark {
+        width: 36px;
+        height: 36px;
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        background: var(--ink);
+        color: var(--emerald-dot);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 36px;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .ledger-project-name {
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--ink);
+      }
+
+      .ledger-project-by {
+        display: block;
+        font-size: 11px;
+        color: var(--ink-light);
+        margin-top: 2px;
+      }
+
+      .ledger-risk-desc,
+      .ledger-outcome-desc {
+        color: var(--ink-muted);
+      }
+
+      .ledger-link {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .ledger-link:hover {
+        text-decoration: underline;
+      }
+
+      .cta-panel {
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: center;
+        background: #ffffff;
+      }
+
+      .cta-title {
+        font-family: var(--font-display);
+        font-size: clamp(26px, 3vw, 38px);
+        line-height: 1.1;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .cta-copy {
+        color: var(--ink-muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .site-footer {
+        border-top: 2px solid var(--border);
+        background: #ffffff;
+        padding: 60px 24px;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .footer-brand {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--ink);
+        letter-spacing: 0.05em;
+      }
+
+      .footer-tagline,
+      .footer-copyright {
+        font-size: 14px;
+        color: var(--ink-light);
+        margin-top: 8px;
+      }
+
+      .footer-contact-label {
+        font-family: var(--font-mono);
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--emerald);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .footer-email {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--blue);
+        text-decoration: none;
+        display: block;
+      }
+
+      .footer-email:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 1024px) {
+        .hero-grid,
+        .proof-grid,
+        .cta-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .fit-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-container {
+          padding: 60px 16px;
+        }
+
+        .hero-section {
+          padding-top: 54px;
+          padding-bottom: 34px;
+        }
+
+        .site-nav {
+          display: none;
+        }
+
+        .header-container {
+          padding: 12px 16px;
+        }
+
+        .header-cta .btn {
+          padding: 6px 10px;
+          font-size: 12px;
+        }
+
+        .hero-signal-list,
+        .fit-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .risk-row {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .risk-pill {
+          justify-self: start;
+        }
+
+        .protocol-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 20px 0;
+        }
+
+        .ledger-table,
+        .ledger-table thead,
+        .ledger-table tbody,
+        .ledger-table th,
+        .ledger-table td,
+        .ledger-table tr {
+          display: block;
+          width: 100%;
+        }
+
+        .ledger-table thead {
+          display: none;
+        }
+
+        .ledger-table tr {
+          border-bottom: 2px solid var(--border);
+          padding: 20px 0;
+        }
+
+        .ledger-table td {
+          padding: 8px 0;
+        }
+
+        .ledger-table td::before {
+          content: attr(data-label);
+          display: block;
+          font-family: var(--font-mono);
+          font-size: 9px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: var(--ink-light);
+          margin-bottom: 4px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .brand-wordmark {
+          font-size: 15px;
+        }
+
+        .hero-actions .btn,
+        .cta-panel .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <a href="/" class="brand-wordmark">RYAN GONYON<span class="brand-cursor">_</span></a>
+        <nav class="site-nav">
+          <a href="#fit" class="nav-link">Fit</a>
+          <a href="#deliverables" class="nav-link">Deliverables</a>
+          <a href="#proof" class="nav-link">Proof</a>
+          <a href="#book" class="nav-link">Book</a>
+        </nav>
+        <div class="header-cta">
+          <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Book on Upwork</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-container hero-section" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker">AI APP RESCUE CONSULTATION</p>
+            <h1 class="hero-title" id="hero-title">Turn your AI-built prototype into a buildable launch plan<span class="hero-title-accent">.</span></h1>
+            <p class="hero-lede">
+              For founders with Lovable, Replit, Cursor, Claude Code, React, Supabase, Vercel, Stripe, or AI workflow prototypes that look close but still do not feel safe to launch.
+            </p>
+
+            <div class="hero-signal-list" aria-label="Consultation outputs">
+              <div class="hero-signal">
+                <strong>Risk map</strong>
+                <span>Auth, data, billing, AI behavior, deploy, and scope risk in priority order.</span>
+              </div>
+              <div class="hero-signal">
+                <strong>First milestone</strong>
+                <span>The smallest useful build slice instead of a vague feature pile.</span>
+              </div>
+              <div class="hero-signal">
+                <strong>Verification checklist</strong>
+                <span>Smoke checks and acceptance criteria you can use immediately.</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-blue btn-lg" target="_blank" rel="noopener">Book the Consultation</a>
+              <a href="#proof" class="btn btn-outline btn-lg">See Proof &darr;</a>
+            </div>
+          </div>
+
+          <div class="proof-video" aria-label="AI App Rescue video introduction">
+            <video controls playsinline preload="metadata" poster="/assets/ai-app-rescue/consultation-reel-scenes.png">
+              <source src="/assets/ai-app-rescue/ai-app-rescue-consultation.mp4" type="video/mp4" />
+            </video>
+            <div class="proof-caption">
+              <span>AI_APP_RESCUE // PRE-LAUNCH</span>
+              <span class="status-inline"><span class="status-dot" aria-hidden="true"></span> 44 SEC PROOF REEL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fit" class="section-container" aria-labelledby="fit-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">BEST FIT</span>
+          <h2 class="section-title" id="fit-title">Use this when the demo exists, but trust does not.</h2>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card">
+            <div>
+              <span class="fit-num">01</span>
+              <h3 class="fit-title">AI-built app cleanup</h3>
+              <p class="fit-desc">A tool-built product has screens, but the architecture, state, data, and handoff are unclear.</p>
+            </div>
+          </article>
+          <article class="fit-card">
+            <div>
+              <span class="fit-num">02</span>
+              <h3 class="fit-title">Launch readiness</h3>
+              <p class="fit-desc">The app is almost ready, but auth, billing, deployment, and support paths need a practical review.</p>
+            </div>
+          </article>
+          <article class="fit-card">
+            <div>
+              <span class="fit-num">03</span>
+              <h3 class="fit-title">Workflow automation</h3>
+              <p class="fit-desc">A manual process needs automation without turning into brittle webhook soup.</p>
+            </div>
+          </article>
+          <article class="fit-card">
+            <div>
+              <span class="fit-num">04</span>
+              <h3 class="fit-title">Founder translation</h3>
+              <p class="fit-desc">You need a technical path you can understand, fund, verify, and hand to the right builder.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="deliverables" class="section-container" aria-labelledby="deliverables-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">CALL OUTPUT</span>
+          <h2 class="section-title" id="deliverables-title">A working session with a concrete handoff.</h2>
+        </div>
+
+        <div class="protocol-list">
+          <div class="protocol-item">
+            <div class="protocol-meta">
+              <span class="protocol-num">01 / BEFORE</span>
+              <h3 class="protocol-title">Share the safest context</h3>
+            </div>
+            <div class="protocol-desc">
+              Send the live link, repo, screenshots, architecture notes, or a walkthrough. Repo access is useful, but not mandatory for the initial call.
+            </div>
+            <div class="protocol-deliverable">Bring: current app state, tools involved, main concern, and constraints.</div>
+          </div>
+          <div class="protocol-item">
+            <div class="protocol-meta">
+              <span class="protocol-num">02 / DURING</span>
+              <h3 class="protocol-title">Rank the fragile parts</h3>
+            </div>
+            <div class="protocol-desc">
+              We review the product path, data boundaries, auth, billing, AI behavior, deployment, error handling, and where the scope is still too vague.
+            </div>
+            <div class="protocol-deliverable">Output: risk map and highest-leverage first slice.</div>
+          </div>
+          <div class="protocol-item">
+            <div class="protocol-meta">
+              <span class="protocol-num">03 / AFTER</span>
+              <h3 class="protocol-title">Leave with the next move</h3>
+            </div>
+            <div class="protocol-desc">
+              You get a project plan and meeting summary within two days, with a scoped follow-up build path if the work is a fit.
+            </div>
+            <div class="protocol-deliverable">Deliverable: project plan, meeting summary, and verification checklist.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-container" aria-labelledby="scan-title" style="border-top: 2px solid var(--border);">
+        <div class="hero-grid">
+          <div>
+            <span class="section-eyebrow">RISK SCAN</span>
+            <h2 class="section-title" id="scan-title" style="margin-bottom: 20px;">The call is not a brainstorm. It is a triage pass.</h2>
+            <p class="section-intro">
+              The point is to stop guessing which part of the prototype is dangerous. We separate demo-only surface area from the parts that need real engineering before money, users, or operational data touch them.
+            </p>
+          </div>
+          <div class="console" aria-label="AI App Rescue Console">
+            <div class="console-header">
+              <span>AI_APP_RESCUE // TRIAGE</span>
+              <span class="status-inline"><span class="status-dot" aria-hidden="true"></span> SCOPED</span>
+            </div>
+            <div class="console-section">
+              <div class="console-label"><span>[01] Launch Risk</span><span>Priority</span></div>
+              <div class="risk-row">
+                <span class="risk-name">Auth/session</span>
+                <span class="risk-note">Can users return safely with the right role?</span>
+                <span class="risk-pill risk-pill-review">Review</span>
+              </div>
+              <div class="risk-row">
+                <span class="risk-name">Database/RLS</span>
+                <span class="risk-note">Tenant boundaries, writes, policies, and migration path.</span>
+                <span class="risk-pill risk-pill-critical">Critical</span>
+              </div>
+              <div class="risk-row">
+                <span class="risk-name">Billing</span>
+                <span class="risk-note">Stripe checkout, webhooks, credits, refunds, and test mode.</span>
+                <span class="risk-pill risk-pill-review">Review</span>
+              </div>
+              <div class="risk-row">
+                <span class="risk-name">AI workflow</span>
+                <span class="risk-note">Inputs, logs, rate limits, model actions, and human override.</span>
+                <span class="risk-pill risk-pill-critical">Critical</span>
+              </div>
+              <div class="risk-row">
+                <span class="risk-name">Deployment</span>
+                <span class="risk-note">Env vars, preview deploys, logs, rollback, and smoke checks.</span>
+                <span class="risk-pill risk-pill-safe">Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proof" class="section-container" aria-labelledby="proof-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">PROOF SURFACE</span>
+          <h2 class="section-title" id="proof-title">The offer has a real operating model behind it.</h2>
+        </div>
+
+        <div class="proof-grid">
+          <div class="media-card">
+            <img src="/assets/ai-app-rescue/ai-app-rescue-dashboard.png" alt="AI App Rescue dashboard with intake, risk scanner, scoped next move, and reviewed operating surfaces." />
+            <div class="media-card-caption">
+              <strong>AI App Rescue Console</strong>
+              <span>An anonymized consultation dashboard showing intake, risk review, architecture mapping, and scoped next move.</span>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="/assets/ai-app-rescue/mobile-responsive-proof.png" alt="Mobile responsive view of the AI App Rescue dashboard." />
+            <div class="media-card-caption">
+              <strong>Mobile-ready proof</strong>
+              <span>The same workflow compressed for a founder reviewing the plan from a phone.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-container" aria-labelledby="ledger-title" style="border-top: 2px solid var(--border);">
+        <div class="section-header">
+          <span class="section-eyebrow">RELATED WORK</span>
+          <h2 class="section-title" id="ledger-title">Relevant systems and proof paths.</h2>
+        </div>
+
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th style="width: 25%">Proof</th>
+              <th style="width: 35%">Why it matters</th>
+              <th style="width: 25%">Output</th>
+              <th style="width: 15%">Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Proof">
+                <div class="ledger-project">
+                  <span class="project-mark" aria-hidden="true">AR</span>
+                  <div>
+                    <span class="ledger-project-name">AI App Rescue Console</span>
+                    <span class="ledger-project-by">Consultation operating model</span>
+                  </div>
+                </div>
+              </td>
+              <td data-label="Why it matters" class="ledger-risk-desc">Shows the exact review pattern: intake, risk ranking, architecture map, and scoped first milestone.</td>
+              <td data-label="Output" class="ledger-outcome-desc">A realistic proof surface for nontechnical founders and tool-built prototypes.</td>
+              <td data-label="Link"><a href="#proof" class="ledger-link">View proof &rarr;</a></td>
+            </tr>
+            <tr>
+              <td data-label="Proof">
+                <div class="ledger-project">
+                  <span class="project-mark" aria-hidden="true">CI</span>
+                  <div>
+                    <span class="ledger-project-name">Catalog Intelligence MVP</span>
+                    <span class="ledger-project-by">GPT-4o catalog operations</span>
+                  </div>
+                </div>
+              </td>
+              <td data-label="Why it matters" class="ledger-risk-desc">Retail catalog data needed controlled AI usage, review queues, audit trail, and export paths.</td>
+              <td data-label="Output" class="ledger-outcome-desc">Live operator console with source-row staging, entity review, approval workflow, and usage caps.</td>
+              <td data-label="Link"><a href="https://ai-platform-catalog-intelligence-de.vercel.app" class="ledger-link" target="_blank" rel="noopener">Live MVP &rarr;</a></td>
+            </tr>
+            <tr>
+              <td data-label="Proof">
+                <div class="ledger-project">
+                  <span class="project-mark" aria-hidden="true">AM</span>
+                  <div>
+                    <span class="ledger-project-name">AutoMarkets</span>
+                    <span class="ledger-project-by">Marketplace and admin workflows</span>
+                  </div>
+                </div>
+              </td>
+              <td data-label="Why it matters" class="ledger-risk-desc">Production workflows required operational clarity across listings, lead paths, review, SEO, and visibility rules.</td>
+              <td data-label="Output" class="ledger-outcome-desc">Hardened marketplace and management-side workflows in a real operating environment.</td>
+              <td data-label="Link"><a href="https://www.automarkets.com.au/" class="ledger-link" target="_blank" rel="noopener">Live Site &rarr;</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="book" class="section-container" style="border-top: 2px solid var(--border);">
+        <div class="cta-panel">
+          <div>
+            <h2 class="cta-title">If the app looks 80% done but you do not trust it yet, this is the right call.</h2>
+            <p class="cta-copy">Book through Upwork for the cleanest payment/review path, or email me if you need to send context before booking.</p>
+          </div>
+          <div class="hero-actions">
+            <a href="https://www.upwork.com/services/product/development-it-ryan-2066951544316331152?ref=project_share" class="btn btn-blue btn-lg" target="_blank" rel="noopener">Book on Upwork</a>
+            <a href="mailto:coderradical@gmail.com?subject=AI%20App%20Rescue%20Consultation" class="btn btn-outline btn-lg">Email Ryan</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div>
+          <span class="footer-brand">RYAN GONYON<span class="brand-cursor" aria-hidden="true">_</span></span>
+          <p class="footer-tagline">Making fragile software dependable.</p>
+        </div>
+        <div>
+          <span class="footer-contact-label">Get in touch</span>
+          <a href="mailto:coderradical@gmail.com" class="footer-email">coderradical@gmail.com</a>
+          <a href="/" class="footer-email">radical.codes</a>
+          <span class="footer-copyright">&copy; 2026 Ryan Gonyon. radical.codes is my personal site.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

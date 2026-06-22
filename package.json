@@ -4,10 +4,15 @@
   "version": "0.1.0",
   "scripts": {
     "build": "vite build",
-    "dev": "vite --host 0.0.0.0"
+    "check": "npm run build && npm audit --audit-level=high",
+    "dev": "vite --host 0.0.0.0",
+    "test": "vitest run"
   },
-  "dependencies": {
-    "vite": "^7.2.6"
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9"
+  }
 }

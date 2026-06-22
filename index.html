@@ -5,1230 +5,681 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Ryan Gonyon helps founders and operators make fragile, AI-built or legacy software dependable. Specialized in app rescue, production readiness, AI workflow automation, and internal tool dashboards."
+      content="Ryan Gonyon builds reviewable AI workflow systems, rescues fragile AI-built apps, and ships internal dashboards for teams that need human approval, durable handoff, and proof."
     />
-    <meta property="og:title" content="Ryan Gonyon | Make Fragile Software Dependable" />
+    <link rel="canonical" href="https://radical.codes/" />
+    <meta name="author" content="Ryan Gonyon" />
+    <meta property="og:title" content="Ryan Gonyon | Reviewable AI Systems and App Rescue" />
     <meta
       property="og:description"
-      content="App rescue, production readiness, AI workflow automation, and proof-first internal tools by Ryan Gonyon."
+      content="App rescue, AI workflow automation, internal dashboards, and proof-first product development by Ryan Gonyon."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://radical.codes" />
+    <meta property="og:url" content="https://radical.codes/" />
+    <meta property="og:site_name" content="radical.codes" />
+    <meta property="og:image" content="https://radical.codes/assets/service-site/reviewable-workflow-command-center.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1815" />
+    <meta property="og:image:height" content="866" />
+    <meta property="og:image:alt" content="Laptop showing a reviewable workflow command center with source inputs, human review, approved output, and logs." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#000000" />
-    <title>Ryan Gonyon | Make Fragile Software Dependable</title>
-    
-    <!-- Google Fonts: Outfit (headings), Inter (body), JetBrains Mono (code) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <style>
-      :root {
-        color-scheme: light;
-        
-        --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-        --font-display: 'Outfit', ui-sans-serif, system-ui, -apple-system, sans-serif;
-        --font-mono: 'JetBrains Mono', monospace;
-        
-        --ink: #000000;
-        --ink-muted: #1f2937; /* High contrast dark grey */
-        --ink-light: #4b5563; /* Medium grey for labels */
-        --border: #000000;
-        
-        /* Operational Accents */
-        --emerald: #059669; /* Emerald Green */
-        --emerald-dot: #10b981; /* Live status green */
-        --emerald-bg: #ecfdf5; /* Emerald wash for badges */
-        --blue: #0052ff; /* Electric Blue for links/CTAs */
-        --blue-hover: #003db3;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: var(--font-sans);
-        color: var(--ink);
-        background-color: #ffffff;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        line-height: 1.5;
-        overflow-x: hidden;
-      }
-
-      /* Flat Sticky Header */
-      .site-header {
-        border-bottom: 2px solid var(--border);
-        position: sticky;
-        top: 0;
-        background: #ffffff;
-        z-index: 100;
-      }
-
-      .header-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 16px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .brand-wordmark {
-        font-family: var(--font-display);
-        font-size: 18px;
-        font-weight: 800;
-        letter-spacing: 0.05em;
-        color: var(--ink);
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-      }
-
-      .brand-cursor {
-        color: var(--emerald);
-        font-weight: 800;
-        margin-left: 2px;
-        animation: blink 1s step-end infinite;
-      }
-
-      @keyframes blink {
-        from, to { color: transparent }
-        50% { color: var(--emerald) }
-      }
-
-      .site-nav {
-        display: flex;
-        gap: 24px;
-      }
-
-      .nav-link {
-        font-family: var(--font-display);
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--ink);
-        text-decoration: none;
-        transition: color 0.15s ease;
-      }
-
-      .nav-link:hover {
-        color: var(--blue);
-      }
-
-      .btn {
-        font-family: var(--font-display);
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border-radius: 4px;
-        transition: background-color 0.15s ease, transform 0.1s ease;
-        cursor: pointer;
-        border: 2px solid var(--border);
-      }
-
-      .btn:active {
-        transform: scale(0.98);
-      }
-
-      .btn-blue {
-        background: var(--blue);
-        color: #ffffff;
-        border-color: var(--blue);
-      }
-
-      .btn-blue:hover {
-        background: var(--blue-hover);
-        border-color: var(--blue-hover);
-      }
-
-      .btn-outline {
-        background: transparent;
-        color: var(--ink);
-        border-color: var(--border);
-      }
-
-      .btn-outline:hover {
-        background: #f9fafb;
-      }
-
-      .btn-sm {
-        padding: 6px 14px;
-        font-size: 13px;
-      }
-
-      .btn-lg {
-        padding: 12px 24px;
-        font-size: 15px;
-      }
-
-      /* Sections & Grid Layouts */
-      .section-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 80px 24px;
-      }
-
-      .hero-section {
-        padding-top: 72px;
-        padding-bottom: 56px;
-      }
-
-      /* Hero Grid */
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 48px;
-        align-items: start;
-      }
-
-      .hero-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .hero-title {
-        font-family: var(--font-display);
-        font-size: clamp(34px, 4.5vw, 56px);
-        line-height: 1.05;
-        font-weight: 800;
-        margin-bottom: 20px;
-        color: var(--ink);
-        letter-spacing: -0.02em;
-      }
-
-      .hero-title-accent {
-        color: var(--emerald);
-      }
-
-      .hero-lede {
-        font-size: clamp(15px, 1.8vw, 17px);
-        line-height: 1.55;
-        color: var(--ink-muted);
-        margin-bottom: 32px;
-      }
-
-      .hero-actions {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
-      .hero-signal-list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin: 0 0 32px;
-      }
-
-      .hero-signal {
-        border-left: 2px solid var(--border);
-        padding-left: 12px;
-      }
-
-      .hero-signal strong {
-        display: block;
-        font-family: var(--font-display);
-        font-size: 14px;
-        line-height: 1.2;
-        color: var(--ink);
-        margin-bottom: 4px;
-      }
-
-      .hero-signal span {
-        display: block;
-        font-size: 12px;
-        line-height: 1.35;
-        color: var(--ink-light);
-      }
-
-      /* Reliability Console (Engineering Dossier Visual) */
-      .console {
-        font-family: var(--font-mono);
-        border: 2px solid var(--border);
-        border-radius: 4px;
-        background: #ffffff;
-        color: var(--ink);
-        overflow: hidden;
-      }
-
-      .console-header {
-        background: var(--ink);
-        color: #ffffff;
-        padding: 8px 12px;
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .console-status-indicator {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .console-dot {
-        width: 6px;
-        height: 6px;
-        background-color: var(--emerald-dot);
-        border-radius: 50%;
-        animation: pulse-status 2s infinite;
-      }
-
-      @keyframes pulse-status {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.3); opacity: 0.5; }
-      }
-
-      .console-section {
-        border-bottom: 1px solid var(--border);
-        padding: 12px;
-      }
-
-      .console-section:last-child {
-        border-bottom: none;
-      }
-
-      .console-label {
-        font-size: 9px;
-        font-weight: 700;
-        color: var(--ink-light);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 6px;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .console-text {
-        font-size: 11px;
-        line-height: 1.45;
-        white-space: pre-wrap;
-      }
-
-      /* Code Diff Component */
-      .code-diff {
-        font-size: 11px;
-        line-height: 1.4;
-      }
-
-      .diff-row {
-        display: flex;
-        padding: 1px 0;
-      }
-
-      .diff-sign {
-        width: 14px;
-        flex-shrink: 0;
-        font-weight: 700;
-        user-select: none;
-      }
-
-      .diff-del {
-        background: #fee2e2;
-        color: #b91c1c;
-      }
-
-      .diff-add {
-        background: #d1fae5;
-        color: #047857;
-      }
-
-      /* Checklist */
-      .audit-checklist {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .audit-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 11px;
-      }
-
-      .audit-check {
-        color: var(--emerald);
-        font-weight: 700;
-      }
-
-      /* Console Links */
-      .console-links {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .console-link {
-        color: var(--blue);
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 11px;
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-      }
-
-      .console-link:hover {
-        text-decoration: underline;
-      }
-
-      /* Section Headers */
-      .section-header {
-        display: flex;
-        flex-direction: column;
-        border-bottom: 2px solid var(--border);
-        padding-bottom: 16px;
-        margin-bottom: 32px;
-      }
-
-      .section-eyebrow {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        font-weight: 700;
-        color: var(--emerald);
-        letter-spacing: 0.1em;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-      }
-
-      .section-title {
-        font-family: var(--font-display);
-        font-size: clamp(24px, 3.5vw, 36px);
-        font-weight: 800;
-        color: var(--ink);
-        letter-spacing: -0.01em;
-      }
-
-      /* Proof Ledger Table */
-      .ledger-table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: left;
-      }
-
-      .ledger-table th {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        border-bottom: 2px solid var(--border);
-        padding: 12px 8px;
-        color: var(--ink-light);
-      }
-
-      .ledger-table tr {
-        border-bottom: 1px solid var(--border);
-        transition: background-color 0.1s ease;
-      }
-
-      .ledger-table tbody tr:hover {
-        background-color: #fafafa;
-      }
-
-      .ledger-table td {
-        padding: 24px 8px;
-        vertical-align: top;
-        font-size: 14.5px;
-        line-height: 1.5;
-        color: var(--ink);
-      }
-
-      .ledger-project-name {
-        font-weight: 700;
-        font-size: 16px;
-        color: var(--ink);
-      }
-
-      .ledger-project {
-        display: flex;
-        align-items: flex-start;
-        gap: 14px;
-      }
-
-      .project-mark {
-        width: 36px;
-        height: 36px;
-        border: 2px solid var(--border);
-        border-radius: 4px;
-        background: var(--ink);
-        color: var(--emerald-dot);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 36px;
-        font-family: var(--font-mono);
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-      }
-
-      .ledger-project-by {
-        display: block;
-        font-size: 11px;
-        color: var(--ink-light);
-        margin-top: 2px;
-      }
-
-      .ledger-risk-desc {
-        color: var(--ink-muted);
-      }
-
-      .ledger-outcome-desc {
-        color: var(--ink-muted);
-      }
-
-      .ledger-link {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        color: var(--blue);
-        text-decoration: none;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-      }
-
-      .ledger-link:hover {
-        text-decoration: underline;
-      }
-
-      /* Method & Protocol Section */
-      .protocol-list {
-        display: flex;
-        flex-direction: column;
-        border-top: 2px solid var(--border);
-      }
-
-      .protocol-item {
-        display: grid;
-        grid-template-columns: 220px 1fr 240px;
-        gap: 32px;
-        padding: 28px 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .protocol-meta {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .protocol-num {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        color: var(--emerald);
-        font-weight: 700;
-        margin-bottom: 4px;
-      }
-
-      .protocol-title {
-        font-family: var(--font-display);
-        font-size: 18px;
-        font-weight: 800;
-        color: var(--ink);
-      }
-
-      .protocol-desc {
-        font-size: 15px;
-        line-height: 1.55;
-        color: var(--ink-muted);
-      }
-
-      .protocol-deliverable {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        line-height: 1.5;
-        color: var(--ink);
-        border-left: 2px solid var(--emerald);
-        padding-left: 12px;
-      }
-
-      /* Standards Section */
-      .standards-list {
-        display: flex;
-        flex-direction: column;
-        border-top: 2px solid var(--border);
-      }
-
-      .standards-item {
-        display: grid;
-        grid-template-columns: 220px 1fr 100px;
-        gap: 32px;
-        padding: 28px 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .standard-label {
-        font-family: var(--font-mono);
-        font-size: 12px;
-        color: var(--ink);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .standard-desc {
-        font-size: 15px;
-        line-height: 1.55;
-        color: var(--ink-muted);
-      }
-
-      .standard-status {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        font-weight: 700;
-        color: var(--emerald);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        text-align: right;
-      }
-
-      /* About Section */
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 60px;
-        align-items: start;
-      }
-
-      .about-body {
-        font-size: 15px;
-        line-height: 1.6;
-        color: var(--ink-muted);
-      }
-
-      .about-body p {
-        margin-bottom: 20px;
-      }
-
-      .about-body p:last-child {
-        margin-bottom: 0;
-      }
-
-      .about-cta {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        border: 2px solid var(--border);
-        padding: 24px;
-        border-radius: 4px;
-        background: #ffffff;
-      }
-
-      .about-panel-label {
-        font-family: var(--font-mono);
-        font-size: 10px;
-        font-weight: 700;
-        color: var(--blue);
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      }
-
-      /* Footer */
-      .site-footer {
-        border-top: 2px solid var(--border);
-        background: #ffffff;
-        padding: 60px 24px;
-      }
-
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 40px;
-      }
-
-      .footer-left {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .footer-brand {
-        font-family: var(--font-display);
-        font-weight: 800;
-        font-size: 18px;
-        color: var(--ink);
-        letter-spacing: 0.05em;
-      }
-
-      .footer-tagline {
-        font-size: 14px;
-        color: var(--ink-light);
-      }
-
-      .footer-right {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .footer-contact-label {
-        font-family: var(--font-mono);
-        font-size: 10px;
-        font-weight: 700;
-        color: var(--emerald);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .footer-email {
-        font-family: var(--font-display);
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--blue);
-        text-decoration: none;
-      }
-
-      .footer-email:hover {
-        text-decoration: underline;
-      }
-
-      .footer-copyright {
-        font-size: 11px;
-        color: var(--ink-light);
-        margin-top: 8px;
-      }
-
-      /* Responsive Layout Rules */
-      @media (max-width: 1024px) {
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        
-        .about-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .section-container {
-          padding: 60px 16px;
-        }
-
-        .hero-section {
-          padding-top: 54px;
-          padding-bottom: 34px;
-        }
-        
-        .site-nav {
-          display: none;
-        }
-        
-        .nav-link {
-          font-size: 12px;
-        }
-        
-        .header-container {
-          padding: 12px 16px;
-        }
-
-        .header-cta {
-          display: block;
-        }
-
-        .header-cta .btn {
-          padding: 6px 10px;
-          font-size: 12px;
-        }
-
-        .hero-signal-list {
-          grid-template-columns: 1fr;
-          gap: 10px;
-          margin-bottom: 28px;
-        }
-
-        .hero-signal {
-          border-left-color: var(--emerald);
-        }
-
-        .hero-visual {
-          display: none;
-        }
-        
-        /* Table Stacked Layout (Mobile proof dossier ledger) */
-        .ledger-table, 
-        .ledger-table thead, 
-        .ledger-table tbody, 
-        .ledger-table th, 
-        .ledger-table td, 
-        .ledger-table tr {
-          display: block;
-          width: 100%;
-        }
-        
-        .ledger-table thead {
-          display: none;
-        }
-        
-        .ledger-table tr {
-          border-bottom: 2px solid var(--border);
-          padding: 20px 0;
-        }
-        
-        .ledger-table td {
-          padding: 8px 0;
-          border-bottom: none;
-        }
-        
-        .ledger-table td::before {
-          content: attr(data-label);
-          display: block;
-          font-family: var(--font-mono);
-          font-size: 9px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: var(--ink-light);
-          margin-bottom: 4px;
-        }
-
-        .ledger-project {
-          align-items: center;
-        }
-
-        .protocol-item {
-          grid-template-columns: 1fr;
-          gap: 8px;
-          padding: 20px 0;
-        }
-
-        .protocol-deliverable {
-          margin-top: 4px;
-        }
-
-        .standards-item {
-          grid-template-columns: 1fr;
-          gap: 8px;
-          padding: 20px 0;
-        }
-
-        .standard-status {
-          text-align: left;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .brand-wordmark {
-          font-size: 15px;
-        }
-
-        .header-container {
-          gap: 16px;
-        }
-
-        .hero-actions .btn {
-          width: 100%;
-        }
-      }
-    </style>
+    <meta name="twitter:title" content="Ryan Gonyon | Reviewable AI Systems and App Rescue" />
+    <meta
+      name="twitter:description"
+      content="Reviewable AI workflow systems, app rescue, internal dashboards, and proof-first product development by Ryan Gonyon."
+    />
+    <meta name="twitter:image" content="https://radical.codes/assets/service-site/reviewable-workflow-command-center.png" />
+    <meta name="twitter:image:alt" content="Reviewable AI workflow command center with human checkpoints and proof logs." />
+    <meta name="theme-color" content="#080a0e" />
+    <title>Ryan Gonyon | Reviewable AI Systems and App Rescue</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://radical.codes/#ryan-gonyon",
+            "name": "Ryan Gonyon",
+            "url": "https://radical.codes/",
+            "email": "mailto:coderradical@gmail.com",
+            "jobTitle": "Software engineer",
+            "brand": {
+              "@id": "https://radical.codes/#radical-codes"
+            },
+            "sameAs": [
+              "https://github.com/Radical-Coder"
+            ],
+            "knowsAbout": [
+              "reviewable AI workflow systems",
+              "AI-built app rescue",
+              "production readiness",
+              "internal operations dashboards",
+              "human-in-the-loop automation",
+              "Vercel and Supabase application delivery"
+            ]
+          },
+          {
+            "@type": "Brand",
+            "@id": "https://radical.codes/#radical-codes",
+            "name": "Radical Codes",
+            "url": "https://radical.codes/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://radical.codes/#website",
+            "name": "radical.codes",
+            "url": "https://radical.codes/",
+            "about": {
+              "@id": "https://radical.codes/#ryan-gonyon"
+            },
+            "publisher": {
+              "@id": "https://radical.codes/#ryan-gonyon"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://radical.codes/#home",
+            "url": "https://radical.codes/",
+            "name": "Ryan Gonyon | Reviewable AI Systems and App Rescue",
+            "isPartOf": {
+              "@id": "https://radical.codes/#website"
+            },
+            "about": {
+              "@id": "https://radical.codes/#service-catalog"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://radical.codes/assets/service-site/reviewable-workflow-command-center.png",
+              "width": 1815,
+              "height": 866
+            }
+          },
+          {
+            "@type": "OfferCatalog",
+            "@id": "https://radical.codes/#service-catalog",
+            "name": "Radical Codes service lanes",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Workflow Audit",
+                  "description": "Workflow, risk, and build path review before implementation."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Workflow Automation Sprint",
+                  "description": "One reviewable workflow with AI processing, human review, approved output handoff, logs, and documentation."
+                }
+              },
+              {
+                "@type": "Offer",
+                "url": "https://radical.codes/ai-app-rescue/",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI App Rescue / Production Readiness",
+                  "description": "Risk map and scoped launch plan for fragile AI-built or founder-built apps."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Internal Ops Dashboard MVP",
+                  "description": "Operator dashboard for records, statuses, owners, exceptions, and next actions."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <!-- Flat Header with bottom rule -->
     <header class="site-header">
-      <div class="header-container">
-        <a href="#" class="brand-wordmark" id="header-logo">
-          RYAN GONYON<span class="brand-cursor">_</span>
-        </a>
-        
-        <nav class="site-nav">
-          <a href="#work" class="nav-link" id="nav-link-work">Work</a>
-          <a href="#method" class="nav-link" id="nav-link-method">Method</a>
-          <a href="#standards" class="nav-link" id="nav-link-standards">Standards</a>
-          <a href="#contact" class="nav-link" id="nav-link-contact">Contact</a>
-        </nav>
-        
-        <div class="header-cta">
-          <a href="mailto:coderradical@gmail.com" class="btn btn-outline btn-sm" id="header-cta-button">
-            Start a Project
-          </a>
-        </div>
-      </div>
+      <a class="brand" href="#top" aria-label="Ryan Gonyon home">
+        <span class="brand-mark">RG</span>
+        <span class="brand-copy">
+          <strong>Ryan Gonyon</strong>
+          <small>radical.codes</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="/ai-app-rescue/">AI Rescue</a>
+        <a href="#services">Services</a>
+        <a href="#proof">Proof</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-cta" href="/ai-app-rescue/">Start a project</a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+        <span class="sr-only">Open navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="section-container hero-section" aria-labelledby="hero-title">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <h1 class="hero-title" id="hero-title">Make fragile software dependable<span class="hero-title-accent">.</span></h1>
-            <p class="hero-lede">
-              I help founders and operators stabilize AI-built logic, recover legacy stacks, and ship custom operations boards that can survive real usage.
-            </p>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" data-mobile-menu hidden>
+      <a href="/ai-app-rescue/">AI Rescue</a>
+      <a href="#services">Services</a>
+      <a href="#proof">Proof</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-            <div class="hero-signal-list" aria-label="Ryan Gonyon operating signals">
-              <div class="hero-signal">
-                <strong>Engineer-owned</strong>
-                <span>Ryan manages the build directly. No account-manager fog.</span>
-              </div>
-              <div class="hero-signal">
-                <strong>Proof before polish</strong>
-                <span>Working surfaces before full-project commitment.</span>
-              </div>
-              <div class="hero-signal">
-                <strong>Built for operation</strong>
-                <span>Readable code, handoff docs, and telemetry.</span>
-              </div>
-            </div>
-            
-            <div class="hero-actions">
-              <a href="mailto:coderradical@gmail.com" class="btn btn-blue btn-lg" id="hero-cta-button-main">
-                Start a Project
-              </a>
-              <a href="#work" class="btn btn-outline btn-lg" id="hero-view-work-link">
-                View Work &darr;
-              </a>
-            </div>
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <h1>Reviewable AI systems and app rescue for software that already matters.</h1>
+          <p>
+            I help founders and operators turn fragile prototypes, repeated manual workflows, and
+            scattered internal processes into dependable software lanes with human review,
+            working proof, logs, and handoff notes.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="/ai-app-rescue/">
+              Start with app rescue
+              <svg aria-hidden="true" viewBox="0 0 20 20">
+                <path d="M4 10h10.2m-4.1-4.1L14.2 10l-4.1 4.1" />
+              </svg>
+            </a>
+            <a class="button secondary" href="#proof">
+              See proof
+              <svg aria-hidden="true" viewBox="0 0 20 20">
+                <path d="M4 10h10.2m-4.1-4.1L14.2 10l-4.1 4.1" />
+              </svg>
+            </a>
           </div>
-          
-          <!-- Reliability Console (Real Evidence Dashboard) -->
-          <div class="hero-visual">
-            <div class="console" aria-label="Operational Reliability Console">
-              <div class="console-header">
-                <span>RELIABILITY_CONSOLE // RC-PROD</span>
-                <div class="console-status-indicator">
-                  <span class="console-dot" aria-hidden="true"></span>
-                  <span>LIVE // SECURE</span>
-                </div>
-              </div>
-              
-              <!-- Deployment Trace -->
-              <div class="console-section">
-                <div class="console-label"><span>[01] Deployment Trace</span><span>SHA-256</span></div>
-                <div class="console-text">ID:        rc-deploy-prod-0x992
-REF:       main@sha256:d8a9f2bc7a9e0f31...
-ENV:       production-us-east-1
-STATUS:    12/12 validation checks passed
-VERIFY:    deployment hash matches source integrity</div>
-              </div>
-              
-              <!-- Audit Checklist -->
-              <div class="console-section">
-                <div class="console-label"><span>[02] Audit Checklist</span><span>Compliance</span></div>
-                <div class="audit-checklist">
-                  <div class="audit-item">
-                    <span class="audit-check">[✔]</span>
-                    <span>Memory leak vector resolved</span>
-                  </div>
-                  <div class="audit-item">
-                    <span class="audit-check">[✔]</span>
-                    <span>Race condition in order processing resolved</span>
-                  </div>
-                  <div class="audit-item">
-                    <span class="audit-check">[✔]</span>
-                    <span>Rate limit on LLM API client enforced</span>
-                  </div>
-                  <div class="audit-item">
-                    <span class="audit-check">[✔]</span>
-                    <span>Sentry telemetry initialized</span>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Code Diff -->
-              <div class="console-section">
-                <div class="console-label"><span>[03] Code Diff</span><span>route.ts</span></div>
-                <div class="code-diff">
-                  <div class="diff-row diff-del">
-                    <span class="diff-sign">-</span>
-                    <span>const data = await db.query(untrusted_payload);</span>
-                  </div>
-                  <div class="diff-row diff-add">
-                    <span class="diff-sign">+</span>
-                    <span>const { data, error } = await db.from('orders')</span>
-                  </div>
-                  <div class="diff-row diff-add">
-                    <span class="diff-sign">+</span>
-                    <span>  .select('*').eq('account_id', accountId);</span>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Incident Timeline -->
-              <div class="console-section">
-                <div class="console-label"><span>[04] Incident Timeline</span><span>Telemetry</span></div>
-                <div class="console-text">14:02:11 [WARN] Memory threshold warning (92%)
-14:02:12 [SYS]  Automated worker recycling triggered
-14:02:13 [OK]   Memory stabilized at 41% (0ms downtime)</div>
-              </div>
-              
-              <!-- Proof Links -->
-              <div class="console-section">
-                <div class="console-label"><span>[05] Proof Links</span><span>Verification</span></div>
-                <div class="console-links">
-                  <a href="https://ai-platform-catalog-intelligence-de.vercel.app" class="console-link" id="proof-board-catalog-link" target="_blank" rel="noopener">[LINK] Catalog Intelligence GPT-4o MVP &rarr;</a>
-                  <a href="https://www.automarkets.com.au/" class="console-link" id="proof-board-automarkets-link" target="_blank" rel="noopener">[LINK] AutoMarkets Live Marketplace &rarr;</a>
-                  <a href="https://mygradhub-mvp-demo.vercel.app" class="console-link" id="proof-board-mygradhub-link" target="_blank" rel="noopener">[LINK] MyGradHub MVP Demo &rarr;</a>
-                  <a href="https://mvp-launch-readiness-console.vercel.app" class="console-link" id="proof-board-readiness-link" target="_blank" rel="noopener">[LINK] MVP Launch Readiness Console &rarr;</a>
-                </div>
-              </div>
+
+          <dl class="hero-facts" aria-label="Operating signals">
+            <div>
+              <dt>First slice</dt>
+              <dd>One workflow, app risk, or dashboard lane.</dd>
             </div>
+            <div>
+              <dt>Review boundary</dt>
+              <dd>AI can assist, but humans approve risky output.</dd>
+            </div>
+            <div>
+              <dt>Proof included</dt>
+              <dd>Working surface, logs, docs, and handoff notes.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" aria-label="Reviewable workflow command center visual">
+          <div class="console-card" aria-label="Workflow diagnostic output">
+            <span class="console-line good">workflow.ready = true</span>
+            <span class="console-line warn">review_gate = human</span>
+            <span class="console-line info">handoff.log = retained</span>
+          </div>
+
+          <figure class="command-frame">
+            <img
+              src="/assets/service-site/reviewable-workflow-command-center.png"
+              width="1815"
+              height="866"
+              alt="Laptop showing a workflow dashboard with review cards and approved outputs"
+              fetchpriority="high"
+            />
+            <figcaption>
+              <span class="signal-dot" aria-hidden="true"></span>
+              <span>Source to review to output to log</span>
+            </figcaption>
+          </figure>
+
+          <div class="review-card" aria-label="Workflow review checkpoint">
+            <span class="review-label">Human checkpoint</span>
+            <strong>Approve, edit, reject, or escalate before output leaves the system.</strong>
           </div>
         </div>
       </section>
 
-      <!-- Proof Ledger (Case Studies Section) -->
-      <section id="work" class="section-container" aria-labelledby="ledger-title" style="border-top: 2px solid var(--border);">
-        <div class="section-header">
-          <span class="section-eyebrow">PROOF LEDGER</span>
-          <h2 class="section-title" id="ledger-title">Real work. Real systems. Real impact.</h2>
+      <section class="diagnostic section" aria-labelledby="diagnostic-title">
+        <div class="diagnostic-lede">
+          <h2 id="diagnostic-title">You probably do not need a chatbot.</h2>
+          <p>
+            The better move is usually a narrow operational lane: messy input, structured AI help,
+            human review, and a real destination your team already uses.
+          </p>
         </div>
-        
-        <table class="ledger-table">
-          <thead>
-            <tr>
-              <th style="width: 25%">Project</th>
-              <th style="width: 35%">Risk Solved</th>
-              <th style="width: 25%">Outcome</th>
-              <th style="width: 15%">Proof</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Row 1: Catalog Intelligence -->
-            <tr id="case-study-catalog-intelligence">
-              <td data-label="Project">
-                <div class="ledger-project">
-                  <span class="project-mark" aria-hidden="true">CI</span>
-                  <div>
-                    <span class="ledger-project-name">Catalog Intelligence MVP</span>
-                    <span class="ledger-project-by">GPT-4o catalog operations</span>
-                  </div>
-                </div>
-              </td>
-              <td data-label="Risk Solved" class="ledger-risk-desc">
-                Retail catalog data from APIs, affiliate feeds, and manual sources needed normalization, dedupe review, taxonomy mapping, and controlled AI usage.
-              </td>
-              <td data-label="Outcome" class="ledger-outcome-desc">
-                Live operator console with source-row staging, entity review, GPT-4o analysis, approval workflow, audit trail, export packet, and demo usage caps.
-              </td>
-              <td data-label="Proof">
-                <a href="https://ai-platform-catalog-intelligence-de.vercel.app" class="ledger-link" id="catalog-intelligence-case-study-link" target="_blank" rel="noopener">Live MVP &rarr;</a>
-              </td>
-            </tr>
-            <!-- Row 2: AutoMarkets -->
-            <tr id="case-study-automarkets">
-              <td data-label="Project">
-                <div class="ledger-project">
-                  <span class="project-mark" aria-hidden="true">AM</span>
-                  <div>
-                    <span class="ledger-project-name">AutoMarkets Live Marketplace</span>
-                    <span class="ledger-project-by">Production marketplace</span>
-                  </div>
-                </div>
-              </td>
-              <td data-label="Risk Solved" class="ledger-risk-desc">
-                Live marketplace drift across listings, market data, dealer ingestion, lead attribution, and admin review paths.
-              </td>
-              <td data-label="Outcome" class="ledger-outcome-desc">
-                Hardened production workflows for public listings, dealer/private visibility, tracking, SEO titles, and milestone review.
-              </td>
-              <td data-label="Proof">
-                <a href="https://www.automarkets.com.au/" class="ledger-link" id="automarkets-case-study-link" target="_blank" rel="noopener">Live Site &rarr;</a>
-              </td>
-            </tr>
-            <!-- Row 3: MyGradHub -->
-            <tr id="case-study-mygradhub">
-              <td data-label="Project">
-                <div class="ledger-project">
-                  <span class="project-mark" aria-hidden="true">GH</span>
-                  <div>
-                    <span class="ledger-project-name">MyGradHub MVP</span>
-                    <span class="ledger-project-by">Graduation marketplace</span>
-                  </div>
-                </div>
-              </td>
-              <td data-label="Risk Solved" class="ledger-risk-desc">
-                Ambiguous graduation-planning concept needed a concrete product shape for families, vendors, admin review, and handoff.
-              </td>
-              <td data-label="Outcome" class="ledger-outcome-desc">
-                Working MVP demo with social feed, vendor marketplace, role-aware navigation, and founder/admin surfaces.
-              </td>
-              <td data-label="Proof">
-                <a href="https://mygradhub-mvp-demo.vercel.app" class="ledger-link" id="mygradhub-case-study-link" target="_blank" rel="noopener">Original Demo &rarr;</a>
-              </td>
-            </tr>
-            <!-- Row 4: MVP Launch Readiness -->
-            <tr id="case-study-readiness">
-              <td data-label="Project">
-                <div class="ledger-project">
-                  <span class="project-mark" aria-hidden="true">LR</span>
-                  <div>
-                    <span class="ledger-project-name">MVP Launch Readiness Console</span>
-                    <span class="ledger-project-by">Launch hardening console</span>
-                  </div>
-                </div>
-              </td>
-              <td data-label="Risk Solved" class="ledger-risk-desc">
-                AI-built MVPs often look close to launch while hiding repo, auth, data, billing, and deployment risk.
-              </td>
-              <td data-label="Outcome" class="ledger-outcome-desc">
-                A focused triage console for intake, risk register, hardening priorities, evidence, and acceptance checks.
-              </td>
-              <td data-label="Proof">
-                <a href="https://mvp-launch-readiness-console.vercel.app" class="ledger-link" id="readiness-case-study-link" target="_blank" rel="noopener">Live Demo &rarr;</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
 
-      <!-- Method & Protocol Section -->
-      <section id="method" class="section-container" aria-labelledby="method-title" style="border-top: 2px solid var(--border);">
-        <div class="section-header">
-          <span class="section-eyebrow">METHOD & PROTOCOL</span>
-          <h2 class="section-title" id="method-title">Technical diagnostics to production handoff.</h2>
-        </div>
-        
-        <div class="protocol-list">
-          <div class="protocol-item">
-            <div class="protocol-meta">
-              <span class="protocol-num">01 / AUDIT & DIAGNOSE</span>
-              <h3 class="protocol-title">Root Cause Analysis</h3>
-            </div>
-            <div class="protocol-desc">
-              I review your existing codebase, API configurations, and deployment logs to identify memory leaks, race conditions, database index bottlenecks, or unhandled exceptions.
-            </div>
-            <div class="protocol-deliverable">Deliverable: fault map, scope brief, and success criteria.</div>
-          </div>
-          
-          <div class="protocol-item">
-            <div class="protocol-meta">
-              <span class="protocol-num">02 / PROTOTYPE</span>
-              <h3 class="protocol-title">Sandboxed Proofs</h3>
-            </div>
-            <div class="protocol-desc">
-              I build a live, working surface in an isolated sandbox environment to demonstrate how the resolved integration will function under simulated stress before writing final production changes.
-            </div>
-            <div class="protocol-deliverable">Deliverable: clickable proof, data model, and integration plan.</div>
-          </div>
-          
-          <div class="protocol-item">
-            <div class="protocol-meta">
-              <span class="protocol-num">03 / EXECUTE & HARDEN</span>
-              <h3 class="protocol-title">Logical Refactoring</h3>
-            </div>
-            <div class="protocol-desc">
-              I refactor critical integration layers, implement automated retry fallbacks, secure API keys and headers, enforce strict validation, and deploy via robust CI/CD environments.
-            </div>
-            <div class="protocol-deliverable">Deliverable: production PR, deployment recipe, and validation checks.</div>
-          </div>
-          
-          <div class="protocol-item">
-            <div class="protocol-meta">
-              <span class="protocol-num">04 / MONITOR & OPERATE</span>
-              <h3 class="protocol-title">Continuous Telemetry</h3>
-            </div>
-            <div class="protocol-desc">
-              I integrate real-time error tracking and telemetry, and construct a lightweight control dashboard so your operational team has absolute visibility 24/7.
-            </div>
-            <div class="protocol-deliverable">Deliverable: alerts, runbook, and operational dashboard.</div>
-          </div>
+        <div class="diagnostic-grid">
+          <article>
+            <h3>Fragile app</h3>
+            <p>Lovable, Replit, Cursor, Claude Code, or founder-built apps that look close but do not feel safe.</p>
+          </article>
+          <article>
+            <h3>Messy workflow</h3>
+            <p>Forms, emails, docs, transcripts, tickets, spreadsheets, or call notes that repeat every week.</p>
+          </article>
+          <article>
+            <h3>Human judgment</h3>
+            <p>Someone already checks quality, handles exceptions, approves output, or owns customer risk.</p>
+          </article>
+          <article>
+            <h3>Real system</h3>
+            <p>The approved output needs to land in a CRM, inbox, database, billing flow, app, or dashboard.</p>
+          </article>
         </div>
       </section>
 
-      <!-- Standards Section -->
-      <section id="standards" class="section-container" aria-labelledby="standards-title" style="border-top: 2px solid var(--border);">
-        <div class="section-header">
-          <span class="section-eyebrow">STANDARDS</span>
-          <h2 class="section-title" id="standards-title">Operational rules I build by.</h2>
+      <section class="section services-section" id="services">
+        <div class="section-heading">
+          <h2>Three ways I help.</h2>
+          <p>
+            Start with the smallest slice that can produce a real decision. The flagship is a
+            reviewable automation sprint; app rescue and dashboard MVPs keep scope honest when
+            that is the better first move.
+          </p>
         </div>
-        
-        <div class="standards-list">
-          <div class="standards-item">
-            <span class="standard-label">Fixed-Scope Agreements</span>
-            <div class="standard-desc">
-              I scope every project to a binary success criteria. No open-ended billing cycles, no surprise hourly creep. You pay for predefined operational results.
+
+        <div class="service-list">
+          <article class="service-card featured sprint-card">
+            <div class="card-index">01</div>
+            <div class="service-body">
+              <h3>AI Workflow Automation Sprint</h3>
+              <p>
+                Build one reviewable workflow around a repeated operational task: intake,
+                extraction, classification, drafting, routing, review, and destination handoff.
+              </p>
+              <ul>
+                <li>Workflow map and acceptance checks</li>
+                <li>AI processing layer with review queue</li>
+                <li>Approved output handoff, logs, docs, and tuning notes</li>
+              </ul>
             </div>
-            <span class="standard-status">Required</span>
-          </div>
-          
-          <div class="standards-item">
-            <span class="standard-label">Demos-First Commitment</span>
-            <div class="standard-desc">
-              You see and interact with a live, functional sandbox mockup demonstrating critical mechanics before you commit to signing a full project contract.
+          </article>
+
+          <article class="service-card rescue-card">
+            <div class="card-index">02</div>
+            <div class="service-body">
+              <h3>AI App Rescue / Production Readiness</h3>
+              <p>
+                Review an AI-built or founder-built app before real users, payments, private data,
+                or launch pressure expose weak foundations.
+              </p>
+              <ul>
+                <li>Auth, data, billing, deployment, and recovery review</li>
+                <li>Fix-now / fix-next risk plan</li>
+                <li>Scoped milestone recommendation</li>
+              </ul>
             </div>
-            <span class="standard-status">Required</span>
-          </div>
-          
-          <div class="standards-item">
-            <span class="standard-label">Direct Engineering</span>
-            <div class="standard-desc">
-              Zero account managers, project coordinators, or sales buffers. You work directly with Ryan Gonyon—the engineer shaping the architecture, reviewing the code, and managing the implementation.
+          </article>
+
+          <article class="service-card ops-card">
+            <div class="card-index">03</div>
+            <div class="service-body">
+              <h3>Internal Ops Dashboard MVP</h3>
+              <p>
+                Replace scattered spreadsheets, status threads, and manual checks with one
+                operator surface for owners, statuses, exceptions, and next actions.
+              </p>
+              <ul>
+                <li>Records, statuses, owners, and next-action views</li>
+                <li>Filtering, reporting, and handoff notes</li>
+                <li>A durable kernel your team can extend later</li>
+              </ul>
             </div>
-            <span class="standard-status">Required</span>
-          </div>
-          
-          <div class="standards-item">
-            <span class="standard-label">Built for Handoff</span>
-            <div class="standard-desc">
-              Every deliverable is clean, self-documenting, covered by test suites, and packaged with clear deployment recipes so any engineer can operate it.
-            </div>
-            <span class="standard-status">Required</span>
-          </div>
+          </article>
         </div>
       </section>
 
-      <!-- About Section -->
-      <section id="about" class="section-container" aria-labelledby="about-title" style="border-top: 2px solid var(--border);">
-        <div class="about-grid">
+      <section class="section proof-section" id="proof">
+        <div class="proof-copy">
+          <h2>Proof should look like working product.</h2>
+          <p>
+            The site now carries the same proof-first stance as the demos: real surfaces, real
+            workflows, real launch concerns. These are the kinds of systems behind the service,
+            not abstract claims about AI.
+          </p>
+
+          <div class="proof-stats" aria-label="Proof snapshot">
+            <div>
+              <strong>3</strong>
+              <span>fresh app captures</span>
+            </div>
+            <div>
+              <strong>5</strong>
+              <span>proof surfaces shown</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>operating pattern underneath</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proof-showcase" aria-label="Recent work screenshots">
+          <article class="proof-case featured">
+            <figure>
+              <img
+                src="/assets/service-proof/automarkets-live-home.png"
+                width="1440"
+                height="980"
+                alt="AutoMarkets live listing search page with collector car filters and market cards"
+              />
+            </figure>
+            <div class="proof-case-body">
+              <span class="proof-tag">Production marketplace</span>
+              <h3>AutoMarkets</h3>
+              <p>
+                Specialty car marketplace and market index surface with listing search, valuation
+                context, seller flows, and data-heavy buyer workflows.
+              </p>
+              <ul>
+                <li>Public production reference</li>
+                <li>Marketplace, listings, search, and market data UX</li>
+                <li>Relevant proof for rescue, dashboard, and cleanup work</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proof-case">
+            <figure>
+              <img
+                src="/assets/service-proof/mygradhub-live-mvp.png"
+                width="1440"
+                height="980"
+                alt="MyGradHub MVP feed with student profile, vendor discovery, bookings, and admin console tabs"
+              />
+            </figure>
+            <div class="proof-case-body">
+              <span class="proof-tag">Active MVP build</span>
+              <h3>MyGradHub</h3>
+              <p>Graduation profiles, vendor discovery, booking paths, and launch-slice discipline.</p>
+            </div>
+          </article>
+
+          <article class="proof-case">
+            <figure>
+              <img
+                src="/assets/service-proof/radical-workflow-local.png"
+                width="1440"
+                height="980"
+                alt="Radical Workflow canvas showing connected prompt, generator, notes, and app preview nodes"
+              />
+            </figure>
+            <div class="proof-case-body">
+              <span class="proof-tag">Workflow product R&amp;D</span>
+              <h3>Radical Workflow</h3>
+              <p>A node-based workspace for turning source inputs into reviewable generated artifacts.</p>
+            </div>
+          </article>
+
+          <article class="proof-case">
+            <figure>
+              <img
+                src="/assets/service-proof/internal-ai-workflow-output.png"
+                width="1440"
+                height="900"
+                alt="Internal AI workspace with source text, executive summary output, and action items"
+              />
+            </figure>
+            <div class="proof-case-body">
+              <span class="proof-tag">AI workflow lane</span>
+              <h3>Source to reviewed output</h3>
+              <p>Structured source text, model-assisted summary, action items, and operator review.</p>
+            </div>
+          </article>
+
+          <article class="proof-case">
+            <figure>
+              <img
+                src="/assets/service-proof/internal-ai-admin-dashboard.png"
+                width="1440"
+                height="900"
+                alt="Internal AI admin dashboard with processing metrics and recent AI actions"
+              />
+            </figure>
+            <div class="proof-case-body">
+              <span class="proof-tag">Operator dashboard</span>
+              <h3>Admin visibility</h3>
+              <p>Status, throughput, recent model actions, and enough context to trust the lane.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section process-section" id="process">
+        <div class="section-heading">
+          <h2>The sprint stays narrow on purpose.</h2>
+          <p>
+            The goal is not to automate a business in one pass. It is to ship one lane small
+            enough to verify and useful enough to keep.
+          </p>
+        </div>
+
+        <div class="process-track" aria-label="Workflow sprint process">
+          <article>
+            <span class="step-number">01</span>
+            <h3>Map the source</h3>
+            <p>Name the inputs, owner, examples, sensitive data, destination, and acceptance checks.</p>
+          </article>
+          <article>
+            <span class="step-number">02</span>
+            <h3>Build the lane</h3>
+            <p>Structure the data, run the AI step, surface exceptions, and preserve source context.</p>
+          </article>
+          <article>
+            <span class="step-number">03</span>
+            <h3>Keep review visible</h3>
+            <p>Let a human approve, edit, reject, or escalate before output reaches a real system.</p>
+          </article>
+          <article>
+            <span class="step-number">04</span>
+            <h3>Leave proof behind</h3>
+            <p>Ship logs, examples, docs, handoff notes, and the next improvement list.</p>
+          </article>
+        </div>
+
+        <div class="example-lane">
+          <div class="example-intro">
+            <h3>Example lanes</h3>
+            <p>Pick a common workflow type and the handoff pattern updates without changing the core system.</p>
+          </div>
+
           <div>
-            <span class="section-eyebrow">OPERATOR</span>
-            <h2 class="section-title" id="about-title" style="margin-bottom: 24px;">Ryan Gonyon // radical.codes</h2>
-            <div class="about-body">
-              <p>I help founders and operators make fragile, AI-generated or legacy software dependable. I build stable integration layers, custom control boards, and automated workflows that run continuously.</p>
-              <p>radical.codes is my public proof surface, not a separate agency or organization. I don't build generic SaaS systems or bloated agency packages; I engineer robust operational tools that eliminate real business risk.</p>
+            <div class="workflow-controls" aria-label="Workflow examples">
+              <button class="segment active" type="button" aria-pressed="true" data-workflow="intake">Intake</button>
+              <button class="segment" type="button" aria-pressed="false" data-workflow="docs">Documents</button>
+              <button class="segment" type="button" aria-pressed="false" data-workflow="support">Support</button>
+              <button class="segment" type="button" aria-pressed="false" data-workflow="content">Content</button>
+            </div>
+
+            <div class="workflow-demo" aria-live="polite">
+              <article class="workflow-column">
+                <span class="column-label">Input</span>
+                <h4 data-input-title>Forms, emails, call notes</h4>
+                <p data-input-copy>Messy intake becomes structured fields, a summary, risk flags, and a follow-up draft.</p>
+              </article>
+              <article class="workflow-column highlighted">
+                <span class="column-label">Review</span>
+                <h4>Approve, edit, reject</h4>
+                <p>The human checkpoint stays visible before anything reaches a customer, CRM, inbox, spreadsheet, or dashboard.</p>
+              </article>
+              <article class="workflow-column">
+                <span class="column-label">Output</span>
+                <h4 data-output-title>CRM-ready record</h4>
+                <p data-output-copy>Approved output lands where the team already works, with a log that explains what happened.</p>
+              </article>
             </div>
           </div>
-          <div class="about-cta">
-            <span class="about-panel-label">ENGAGEMENT</span>
-            <p style="font-size: 14px; line-height: 1.5; color: var(--ink-muted); margin-bottom: 12px;">Currently accepting select high-priority app rescue, dashboard, and AI automation projects.</p>
-            <a href="mailto:coderradical@gmail.com" class="btn btn-blue btn-lg" id="about-email-link" style="width: 100%;">
-              coderradical@gmail.com
-            </a>
-            <a href="https://github.com/Radical-Coder/radical-codes-site" class="btn btn-outline btn-lg" id="about-github-link" style="width: 100%; margin-top: 12px;" target="_blank" rel="noopener">
-              View Source on GitHub
-            </a>
+        </div>
+      </section>
+
+      <section class="section pricing-section">
+        <div class="section-heading">
+          <h2>Offer ladder.</h2>
+          <p>Use the lowest-risk entry point that can create a real decision.</p>
+        </div>
+
+        <div class="package-table" role="table" aria-label="Service packages">
+          <div class="package-row package-head" role="row">
+            <span role="columnheader">Package</span>
+            <span role="columnheader">Range</span>
+            <span role="columnheader">Best for</span>
+            <span role="columnheader">Included</span>
+          </div>
+          <div class="package-row" role="row">
+            <span role="cell">Workflow Audit</span>
+            <span role="cell">$500-$1,500</span>
+            <span role="cell">A team that needs workflow, risk, and build path clarity before coding.</span>
+            <span role="cell">Workflow map, examples review, risk notes, first-sprint recommendation.</span>
+          </div>
+          <div class="package-row featured" role="row">
+            <span role="cell">Automation Sprint</span>
+            <span role="cell">$2,500-$7,500</span>
+            <span role="cell">One repeated workflow with messy input, human review, and a real output destination.</span>
+            <span role="cell">Working lane, review queue, output handoff, logs, docs, tuning notes.</span>
+          </div>
+          <div class="package-row" role="row">
+            <span role="cell">AI App Rescue</span>
+            <span role="cell">$500 consultation or scoped milestone</span>
+            <span role="cell">A tool-built app nearing users, payments, private data, or handoff pressure.</span>
+            <span role="cell">Risk map, launch checklist, fix-now / fix-next plan, milestone scope.</span>
+          </div>
+          <div class="package-row" role="row">
+            <span role="cell">Internal Dashboard MVP</span>
+            <span role="cell">$2,500-$7,500</span>
+            <span role="cell">A team replacing scattered status threads, sheets, and manual checks.</span>
+            <span role="cell">Operator surface, filters, status model, reporting, and handoff notes.</span>
           </div>
         </div>
+      </section>
+
+      <section class="section fit-section" aria-label="Fit guide">
+        <article class="fit-panel good">
+          <h2>Good fit</h2>
+          <ul>
+            <li>The workflow happens every week.</li>
+            <li>The app exists but trust is not there yet.</li>
+            <li>A person already reviews or approves the work.</li>
+            <li>The output needs to land in a real system.</li>
+            <li>Mistakes matter enough that blind automation would be irresponsible.</li>
+          </ul>
+        </article>
+
+        <article class="fit-panel bad">
+          <h2>Not a fit</h2>
+          <ul>
+            <li>No repeated workflow or accountable owner.</li>
+            <li>A generic chatbot with no operational destination.</li>
+            <li>AI making final legal, medical, financial, or hiring decisions.</li>
+            <li>Unsupervised external messages without review.</li>
+            <li>A full rebuild when a triage pass is the honest first step.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div>
+          <h2>Bring one fragile app or workflow. I will bring the proof loop.</h2>
+          <p>
+            Send the current app, repeated task, three real examples, and where approved output
+            should land. I will help decide whether it is an audit, app rescue pass, automation
+            sprint, dashboard MVP, or a polite no-build recommendation.
+          </p>
+        </div>
+        <a
+          class="button primary large"
+          href="mailto:coderradical@gmail.com?subject=Workflow%20or%20app%20rescue%20audit&body=App%20or%20workflow%20I%20want%20to%20review%3A%0A%0AThree%20real%20examples%3A%0A%0AWho%20reviews%20or%20approves%20the%20work%3A%0A%0AWhere%20the%20approved%20output%20should%20go%3A%0A"
+        >
+          Send the audit brief
+          <svg aria-hidden="true" viewBox="0 0 20 20">
+            <path d="M4 10h10.2m-4.1-4.1L14.2 10l-4.1 4.1" />
+          </svg>
+        </a>
       </section>
     </main>
 
-    <!-- Site Footer with Contact ID -->
-    <footer class="site-footer" id="contact">
-      <div class="footer-container">
-        <div class="footer-left">
-          <span class="footer-brand">RYAN GONYON<span class="brand-cursor" aria-hidden="true">_</span></span>
-          <p class="footer-tagline">Making fragile software dependable.</p>
-        </div>
-        <div class="footer-right">
-          <span class="footer-contact-label">Get in touch</span>
-          <a href="mailto:coderradical@gmail.com" class="footer-email" id="footer-email-link">coderradical@gmail.com</a>
-          <a href="https://github.com/Radical-Coder/radical-codes-site" class="footer-email" id="footer-github-link" target="_blank" rel="noopener">github.com/Radical-Coder/radical-codes-site</a>
-          <span class="footer-copyright">&copy; 2026 Ryan Gonyon. radical.codes is my personal site.</span>
-        </div>
-      </div>
+    <footer class="site-footer">
+      <span>Ryan Gonyon / radical.codes</span>
+      <span>Full-stack product development, AI workflow automation, and app rescue.</span>
     </footer>
+
+    <script>
+      const workflows = {
+        intake: {
+          inputTitle: "Forms, emails, call notes",
+          inputCopy: "Messy intake becomes structured fields, a summary, risk flags, and a follow-up draft.",
+          outputTitle: "CRM-ready record",
+          outputCopy: "Approved output lands where the team already works, with a log that explains what happened.",
+        },
+        docs: {
+          inputTitle: "PDFs, invoices, forms",
+          inputCopy: "Documents become extracted fields, summaries, exception notes, and an approval queue.",
+          outputTitle: "Spreadsheet or system handoff",
+          outputCopy: "The approved record moves to accounting, a spreadsheet, or the next internal queue.",
+        },
+        support: {
+          inputTitle: "Tickets and inbox messages",
+          inputCopy: "Support messages become category, urgency, known-issue match, and a draft response.",
+          outputTitle: "Escalation-ready queue",
+          outputCopy: "The team sees what needs a human, what can be sent, and what should be investigated.",
+        },
+        content: {
+          inputTitle: "Long video or transcript",
+          inputCopy: "Source material becomes clip ideas, captions, newsletter drafts, posts, and SEO briefs.",
+          outputTitle: "Reviewed content pipeline",
+          outputCopy: "Approved content moves into a publishing queue with source context and revision history.",
+        },
+      };
+
+      const menuButton = document.querySelector("[data-menu-button]");
+      const mobileMenu = document.querySelector("[data-mobile-menu]");
+
+      function closeMenu() {
+        menuButton?.setAttribute("aria-expanded", "false");
+        if (mobileMenu) mobileMenu.hidden = true;
+      }
+
+      menuButton?.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        if (mobileMenu) mobileMenu.hidden = isOpen;
+      });
+
+      mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      const inputTitle = document.querySelector("[data-input-title]");
+      const inputCopy = document.querySelector("[data-input-copy]");
+      const outputTitle = document.querySelector("[data-output-title]");
+      const outputCopy = document.querySelector("[data-output-copy]");
+
+      document.querySelectorAll("[data-workflow]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const workflow = workflows[button.dataset.workflow];
+          if (!workflow || !inputTitle || !inputCopy || !outputTitle || !outputCopy) return;
+
+          document.querySelectorAll("[data-workflow]").forEach((control) => {
+            const selected = control === button;
+            control.classList.toggle("active", selected);
+            control.setAttribute("aria-pressed", String(selected));
+          });
+
+          inputTitle.textContent = workflow.inputTitle;
+          inputCopy.textContent = workflow.inputCopy;
+          outputTitle.textContent = workflow.outputTitle;
+          outputCopy.textContent = workflow.outputCopy;
+        });
+      });
+    </script>
   </body>
 </html>
